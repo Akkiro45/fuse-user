@@ -1,0 +1,162 @@
+.Box {
+	width: 85%;
+	height: 180px;
+	margin: auto;
+	border: 1px solid #ccc;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	max-width: 950px;
+	box-shadow: 0 2px 3px #ccc;
+} 
+.Box:hover {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.Photo {
+	/* position: relative;
+	top: 15%; */
+	width: 200px;
+	height: 85%;
+	border-right: 1px solid #33addd;
+	float: left;
+}
+.Photo img {
+	margin-left: auto;
+	width: 100%;
+	height: 100%;  
+	/* max-width: 100%;
+	max-height: 100%; */
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.Data {
+	/* background-color: aqua; */
+	/* position: relative;
+	top: 15%; */
+	width: calc(100% - 201px);
+	height: 85%;
+	float: right;
+}
+.Inner {
+	/* background-color: bisque; */
+	width: 98%;
+	height: 95%;
+	margin: auto;
+	position: relative;
+	top: 2.5%;
+}
+
+.Name {
+	/* background-color: cornflowerblue; */
+	position: relative;
+	top: 0;
+	left: 0;
+	width: calc(100% - 5px);
+	height: calc(15% - 1px);
+	font-size: 1.2em;
+	font-weight: bold;
+	overflow: hidden;
+	color: #006989;
+	padding-left: 5px;
+	border-bottom: 1px solid #006989;
+}
+
+.Address {
+	/* background-color: aqua; */
+	width: 100%;
+	/* height: 52%; */
+	height: 80px;
+	margin-bottom: 2px;
+	font-size: 1em;
+	/* border-top: 1px solid #006989; */
+	/* border-bottom: 1px solid #33addd; */
+}
+
+.Category {
+	/* background-color: blue; */
+	width: 100%;
+	/* height: 25%; */
+	height: 40px;
+	font-size: 1em;
+	font-weight: bold;
+	color: #006989;
+	/* border-bottom: 1px solid #33addd; */
+}
+
+.Yes,
+.No {
+	/* background-color: chartreuse; */
+	font-weight: bold;
+	color: #27DF46;
+	width: 100%;
+	height: 12%;
+	text-align: center;
+	font-size: 1em;
+}
+.No {
+	color: red;
+}
+.Icon {
+	/* background-color: antiquewhite; */
+	width: 20px;
+	height: 100%;
+	font-size: 0.8em;
+	float: left;
+	padding-top: 2px;
+}
+.Text {
+	/* background-color: chocolate; */
+	width: calc(100% - 20px);
+	height: 100%;
+	float: right;
+	overflow-x: hidden;
+	overflow-y: auto;
+	/* word-break: break-all; */
+	overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+@media(max-width: 650px) {
+	.Box {
+		height: 120px;
+	}
+	.Yes,
+	.No {
+		font-size: 0.8em;
+	}
+	.Icon {
+		font-size: 0.6em;
+		width: 10px;
+	}
+	.Text {
+		width: 92%;
+	}
+	.Name {
+		font-size: 0.9em;
+	}
+	.Address,
+	.Category {
+		font-size: 0.8em;
+	}
+	.Address {
+		height: 50px;
+	}
+	.Category {
+		height: 30px;
+	}
+	.Photo {
+		width: 100px;
+	}
+	.Data {
+		width: calc(100% - 101px);
+	}
+}
+
+@media(max-width: 800px) {
+	.Yes,
+	.No {
+		font-size: 0.8em;
+	}
+}

@@ -1,0 +1,192 @@
+.Box {
+  width: 95%;
+  height: auto;
+  border: 1px solid #ccc;
+  margin: 10px auto;
+  margin-top: 40px;
+  box-shadow: 0 2px 3px #ccc;
+  max-width: 950px;
+}
+.Container {
+  width: 95%;
+  height: 100%;
+  margin: auto;
+}
+.Show {
+  /* background-color: antiquewhite; */
+  border-top: 1px solid #006989;
+  width: 100%;
+  height: 25px;
+  text-align: center;
+  color: #006989;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+.Name {
+  /* background-color: aquamarine; */
+  width: 100%;
+  height: 25px;
+  margin: auto;
+  margin-bottom: 2px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #006989;
+  overflow: hidden;
+  /* word-break: break-all; */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+.SInfo {
+  /* background-color: aliceblue; */
+  width: 100%;
+  height: 140px;
+  margin-bottom: 10px;
+}
+.Photo {
+  /* background-color: chartreuse; */
+  width: 140px;
+  height: 100%;
+  border: 1px solid #ccc;
+  float: left;
+}
+.Photo img {
+  width: 100%;
+  height: 100%;
+}
+.Address {
+  /* background-color: blanchedalmond; */
+  float: left;
+  width: calc(100% - 142px);
+  height: 100%;
+}
+.Add {
+  /* background-color: cornsilk; */
+  width: 95%;
+  height: 80%;
+  margin-bottom: 1%;
+  float: right;
+  font-size: 1em;
+  /* word-break: break-all; */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.Yes,
+.No {
+  /* background-color: blue; */
+  width: 95%;
+  height: 4;
+  float: right;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #27DF46;
+}
+.No {
+  color: red;
+}
+.Both {
+  /* background-color: #27DF46; */
+  width: 260px;
+  margin: auto;
+}
+.Left {
+  /* background-color: blueviolet; */
+  width: 20px;
+  height: 25px;
+  float: left;
+  font-size: 1.4em;
+}
+.Extra {
+  /* background-color: antiquewhite; */
+  height: auto;
+  width: 95%;
+  /* margin: auto; */
+  margin: 10px auto;
+}
+.Contain {
+  margin: 10px 0;
+  width: 100%;
+  height: auto;
+  background-color: #27DF46;
+  box-sizing: border-box;
+  display: block;
+}
+.Category {
+  background-color: aliceblue;
+  font-size: 1em;
+  width: fit-content;
+  display: inline-block;
+  margin: 5px;
+  color: #006989;
+  font-weight: bold;
+}
+.DCharge {
+  float: left;
+  margin-left: 10px;
+  font-size: 1.1em;
+  color: #006989;
+  font-weight: bold;
+}
+.H {
+  /* background-color: #27DF46; */
+  height: 20px;
+}
+.ShopDesc {
+  border: 1px solid #eee;
+  width: 100%;
+  max-height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* word-break: break-all; */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  text-indent: 30px;
+}
+
+@media( max-width: 650px ) {
+  .Box {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+  }
+  .SInfo {
+    height: 120px;
+  }
+  .Photo {
+    width: 120px;
+  }
+  .Address {
+    width: calc(100% - 122px);
+  }
+  .Add {
+    font-size: 0.8em;
+  }
+  .Yes,
+  .No {
+    font-size: 0.9em;
+  }
+  .Show {
+    font-size: 0.9em;
+    height: 20px;
+  }
+  .Both {
+    width: 200px;
+  }
+  .Left {
+    font-size: 1.1em;
+    height: 22px;
+  }
+  .DCharge {
+    font-size: 0.9em;
+  }
+  .H {
+    height: 18px;
+  }
+}

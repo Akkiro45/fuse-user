@@ -1,0 +1,5 @@
+.Input {
+  height: 100%;
+  width: calc(100% - 5px);
+  padding: 0 5px;
+}

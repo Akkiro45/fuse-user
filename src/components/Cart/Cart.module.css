@@ -1,0 +1,23 @@
+.Cart {
+  /* background-color: aliceblue; */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.EmptyMsg,
+.Error {
+  /* background-color: aqua;  */
+  color: #006989;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: center;
+  position: relative;
+  top: 38%;
+}
+.Icon {
+  font-size: 3em;
+}
+.Error {
+  top: 45%;
+}
+

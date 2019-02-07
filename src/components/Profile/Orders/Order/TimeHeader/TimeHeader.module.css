@@ -1,0 +1,21 @@
+.Time {
+  background-color: #006989;
+  width: 100%;
+  height: 22px;
+}
+.TimeIcon {
+  /* background-color: yellowgreen; */
+  float: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 100%;
+  font-size: 0.9em;
+}
+.TimeText {
+  /* background-color: yellow; */
+  float: left;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  height: 100%;
+}

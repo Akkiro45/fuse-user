@@ -1,0 +1,109 @@
+.Confirmation {
+  /* background-color: aliceblue; */
+  width: 95%;
+  max-width: 950px;
+  height: 475px;
+  margin: 20px auto;
+}
+.PInfo,
+.Address,
+.Payment {
+  /* background-color: aqua; */
+  width: 90%;
+  height: 90px;
+  margin: auto;
+  color: #006989;
+}
+.Address {
+  height: auto;
+}
+.TitleBox {
+  /* background-color: chartreuse; */
+  width: 100%;
+  height: 25px;
+  font-size: 1.1em;
+}
+.Left {
+  /* background-color: blue; */
+  width: 25px;
+  height: 100%;
+  float: left;
+}
+.Right {
+  /* background-color: azure; */
+  width: calc(100% - 25px);
+  height: 100%;
+  float: right;
+  font-weight: bold;
+}
+.Info {
+  /* background-color: blanchedalmond; */
+  width: calc(100% - 35px);
+  max-height: calc(100% - 25px);
+  float: right;
+  word-break: break-all;
+  overflow: auto;
+}
+.Msg {
+  /* background-color: blanchedalmond; */
+  text-align: center;
+  width: 100%;
+  font-size: 0.8em;
+  color: #006989;
+}
+.Msg span {
+  font-weight: bold;
+}
+.Button {
+  width: 125px;
+  height: 30px;
+  margin: 20px auto;
+}
+.Ads {
+  width: 90%;
+  height: 60px;
+  border: 1px solid #ccc;
+  margin: 10px auto;
+}
+.Buttons {
+  /* background-color: aqua; */
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.AAdd,
+.SAdd {
+  display: inline-block;
+  width: 150px;
+  height: 30px;
+  margin: 5px 20px;
+}
+.NoAddMsg {
+  /* background-color:  beige; */
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.AddressC {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+.AddressT {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  width: 95%;
+  margin: 10px auto;
+}
+
+@media(max-width: 650px) {
+  .Confirmation {
+    width: 100%;
+  }
+  .PInfo,
+  .Address,
+  .Payment {
+    width: 100%;
+  }
+}

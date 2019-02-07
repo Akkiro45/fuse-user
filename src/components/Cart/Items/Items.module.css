@@ -1,0 +1,10 @@
+.Box {
+  width: 100%;
+  height: auto;
+}
+.Items {
+  width: 100%;
+  max-height: 200px;
+  overflow: auto;
+  border-bottom: 1px solid #006989;
+}

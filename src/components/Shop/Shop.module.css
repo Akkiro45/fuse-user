@@ -1,0 +1,24 @@
+.Shop {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+.Error {
+  /* background-color: antiquewhite; */
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #006989;
+  position: relative;
+  top: 20%;
+  margin-bottom: 50px;
+}
+.T {
+  margin: 0 5px;
+}
+.Bucket {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 60px;
+}

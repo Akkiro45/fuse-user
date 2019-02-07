@@ -1,0 +1,49 @@
+.Header {
+  background-color: #006989;
+  width: 100%;
+  height: 60px;
+}
+.Logo {
+  height: 100%;
+  float: left;
+}
+.Fuse {
+  /* background-color: aliceblue; */
+  height: calc(100% - 10px);
+  float: left;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  padding-top: 10px;
+}
+.Nav {
+  float: right;
+}
+.Container {
+  height: 100%;
+  width: 90%;
+  margin: auto;
+}
+@media (max-width:650px) {
+  .Nav {
+      clear: both;
+      display: none;
+  }
+  .Logo {
+    /* width: calc(100%-40px);
+    /* float: right; */ 
+    /* clear: both; */
+    /* margin: auto;
+    margin-left: 30%; */
+    float: right;
+  }
+  .Fuse {
+    float: right;
+  }
+  .ToggleButton {
+    box-sizing: border-box;
+    height: 100%;
+    width: 40px;
+    float: left;
+  }
+}

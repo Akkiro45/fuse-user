@@ -1,0 +1,50 @@
+.Home {
+  width: 100%;
+  height: 100%;
+}
+.Sidebar {
+  /* background-color: aqua; */
+  width: 200px;
+  height: 100%;
+  border-right: 2px solid #006989;
+  float: left;
+  background-color: #eee;
+}
+.Window {
+  /* background-color: antiquewhite; */
+  float: left;
+  width: calc(100% - 202px);
+  height: 100%;
+  overflow: auto;
+}
+.Error {
+  position: relative;
+  top: 40%;
+  color: #006989;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: center;
+}
+.Exta {
+  color: #006989;
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 4%;
+}
+.Spinner {
+  position: relative;
+  top: 25%;
+}
+
+@media( max-width: 650px ) {
+  .Sidebar {
+    display: none;
+  }
+  .Window {
+    width: 100%;
+  }
+  .Spinner {
+    left: 0;
+  }
+}

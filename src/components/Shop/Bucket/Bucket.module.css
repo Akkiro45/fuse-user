@@ -1,0 +1,54 @@
+.Bucket {
+  background-color: white;
+  width: 95%;
+  max-width: 950px;
+  margin: auto;
+  border: 2px solid #006989;
+  border-top: none;
+  /* box-shadow: 0 2px 3px #ccc; */
+}
+.Footer {
+  width: 100%;
+  height: 25px;
+}
+.Msg {
+  /* background-color: aqua; */
+  height: 100%;
+  width: 85%;
+  float: left;
+  cursor: pointer;
+}
+.Text,
+.Icon {
+  margin-top: 2px;
+  margin-left: 10px;
+  float: left;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #006989;
+}
+.Icon {
+  font-size: 1.5em;
+}
+.Button {
+  width: 15%;
+  height: 100%;
+  float: right;
+}
+.Info {
+  width: 100%;
+  border-bottom: 1px solid #006989;
+}
+@media( max-width: 650px ) {
+  .Bucket {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #006989;
+  }
+  .Msg {
+    width: 70%;
+  }
+  .Button {
+    width: 30%;
+  }
+}

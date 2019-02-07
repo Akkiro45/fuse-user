@@ -1,0 +1,18 @@
+.Label {
+  width: fit-content;
+  color: #006989;
+  opacity: 0.7;
+  font-weight: bold;
+  font-size: 1.1em;
+  /* border-bottom: 2px solid #006989; */
+  /* word-wrap: break-word; */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  /* background-color: chartreuse; */
+}
+@media( max-width: 650px ) {
+  .Label {
+    font-size: 0.9em;
+  }
+}

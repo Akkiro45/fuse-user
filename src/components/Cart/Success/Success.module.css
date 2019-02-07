@@ -1,0 +1,40 @@
+.Success {
+  /* background-color: aliceblue; */
+  width: 85%;
+  height: fit-content;
+  margin: 20px auto;
+}
+.Top {
+  text-align: center;
+  font-size: 1.3em;
+}
+.Icon {
+  font-size: 2.5em;
+}
+.Text {
+  color: #006989;
+  font-weight: bold;
+}
+.Container {
+  width: 95%;
+  margin: auto;
+}
+
+.Buttons {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+.StatusB,
+.ContinueB {
+  width: 175px;
+  height: 30px;
+  display: inline-block;
+  margin: 10px;
+}
+
+@media(max-width: 650px) {
+  .Success {
+    width: 100%;
+  }
+}

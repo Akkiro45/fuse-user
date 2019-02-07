@@ -1,0 +1,31 @@
+.Items {
+  /* background-color: aliceblue; */
+  width: 95%;
+  max-width: 950px;
+  height: auto;
+  margin: auto;
+  margin-bottom: 80px;
+}
+.Title {
+  /* background-color: aqua; */
+  font-size: 1.1em;
+  height: 30px;
+  font-weight: bold;
+  color: #006989;
+}
+.Container {
+  /* background-color: azure; */
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+@media( max-width: 650px ) {
+  .Items {
+    width: 100%;
+  }
+  .Title {
+    font-size: 1em;
+    height: 25px;
+  }
+}

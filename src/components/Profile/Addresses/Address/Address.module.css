@@ -1,0 +1,49 @@
+.Address {
+  width: 100%;
+  height: 80px;
+  border: 1px solid #ccc;
+}
+.Container {
+  /* background-color: blueviolet; */
+  width: 90%;
+  height: 90%;
+  margin: 4px auto;
+} 
+.Addrs {
+  /* background-color: aqua; */
+  width: 90%;
+  height: 100%;
+  float: left;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  overflow: auto;
+  font-size: 1em;
+}
+.CrossIcon {
+  /* background-color: aliceblue; */
+  width: 10%;
+  height: 100%;
+  float: right;
+  font-size: 1.5em;
+}
+.Icon {
+  /* background-color: blueviolet; */
+  width: 22px;
+  margin: auto;
+  position: relative;
+  top: 25px;
+}
+.Error {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+}
+
+@media(max-width: 650px) {
+  .Address {
+    border-right: none;
+    border-left: none;
+  }
+}
