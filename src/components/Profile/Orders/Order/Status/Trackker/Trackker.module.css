@@ -1,17 +1,14 @@
 .Trackker {
-  /* background-color: aliceblue; */
   width: 90%;
   height: 75px;
   margin: 10px auto;  
 }
 .Icons {
-  /* background-color: aqua; */
   width: fit-content;
   height: 42px;
   margin: auto;
 }
 .IconC {
-  /* background-color: tomato; */
   float: left;
   width: 40px;
   height: 40px;
@@ -20,7 +17,6 @@
   padding: 0;
 }
 .Icon {
-  /* background-color: aqua; */
   font-size: 3.1em;
   width: 40px;
   height: 40px;
@@ -30,7 +26,6 @@
   top: -5px;
 }
 .Space {
-  /* background-color: blueviolet; */
   width: 130px;
   height: 100%;
   float: left;
@@ -41,14 +36,13 @@
   height: 50%;
 }
 .Text {
-  /* background-color: yellowgreen; */
   width: 75px;
   margin-left: -18px;
   margin-top: 4px;
   text-align: center;
   font-size: 16px;
   font-weight: bold;
-  color: #006989;
+  color: #2874ff;
 }
 
 @media( max-width: 500px ) {

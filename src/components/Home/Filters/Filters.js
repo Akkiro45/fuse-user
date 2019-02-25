@@ -5,8 +5,6 @@ import CheckBox from '../../UI/CheckBox/CheckBox';
 import Button from '../../UI/FormButton/Button';
 import { shopCategories } from '../../../shared/options';
 import { getInput, getSelect, updateObject, validateFilters, convertAddress } from '../../../shared/utility';
-import Popup from '../../../hoc/ErrorHandler/ErrorHandler';
-import AddAddress from '../../Cart/AddAddress/AddAddress';
 
 class Filters extends Component {
   state = {
@@ -34,10 +32,6 @@ class Filters extends Component {
       height: '28px'
     }
   }
-  clearAddressPopup = () => {
-    const updatedField = updateObject(this.state.address, { value: 'address' });
-    this.setState({ address: updatedField });
-  }
   inputChangedHandler = (e) => {
     const updatedField = updateObject(this.state[e.target.name], { value: e.target.value });
     this.setState({ [e.target.name]: updatedField });
@@ -49,7 +43,12 @@ class Filters extends Component {
   }
   onSelectHandler = (e, type) => {
     let field;
-    field = updateObject(this.state[type], { value: e.target.value });
+    if(e.target.value === 'add') {
+      this.props.addAddressPopup();
+      field = updateObject(this.state[type], { value: 'address' });
+    } else {
+      field = updateObject(this.state[type], { value: e.target.value });
+    }
     this.setState({ [type]: field });
   }
   onClear = () => {
@@ -80,16 +79,6 @@ class Filters extends Component {
       });
     }
     address.push({ name: 'Add New Address', value: 'add' });
-    
-    let popup = null;
-    if(this.state.address.value === 'add') {
-      popup = (
-        <Popup
-          error={<AddAddress off={this.clearAddressPopup} />}
-          errorConformedhandler={this.clearAddressPopup}
-        />
-      );
-    }
     let addSelect = null;
     if(this.props.isAuth) {
       addSelect = (
@@ -100,7 +89,6 @@ class Filters extends Component {
     }
     return(
       <div className={module.Filters} >
-        {popup}
         <div className={module.Container} >
           <span>Search By</span>
         </div>

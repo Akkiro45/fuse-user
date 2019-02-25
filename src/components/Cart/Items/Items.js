@@ -21,13 +21,14 @@ const items = (props) => {
         quantity={is.quantity}
         price={is.price}
         bucket={props.bucket}
-        rmvItem={props.bucket ? () => props.rmvItem(is._id) : null}
-        onInc={props.bucket ? () => props.updateItem(is._id, true) : null}
-        onDec={props.bucket ? () => props.updateItem(is._id, false) : null}
+        rmvItem={props.bucket ? () => props.rmvItem(is._id, is.mValue) : null}
+        onInc={props.bucket ? () => props.updateItem(is._id, true, is.mValue) : null}
+        onDec={props.bucket ? () => props.updateItem(is._id, false, is.mValue) : null}
         // src={}
       />
     );
   });
+  
   if(props.subtotal) subTotal = props.subtotal;
   total = parseInt(subTotal) + parseInt(props.deliverycharge);
   deliveryCharge = props.deliverycharge;

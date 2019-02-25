@@ -12,7 +12,7 @@ const adddress = (props) => {
       </div>
       <div className={module.Button} >
         <div className={module.Btn} >
-          <Button onClick={props.onSelectAdd} >Here</Button>
+          <Button bradius='4px' onClick={props.onSelectAdd} >Here</Button>
         </div>
       </div>
     </div>

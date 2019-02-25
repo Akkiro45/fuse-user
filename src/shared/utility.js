@@ -3,6 +3,7 @@ import moment from 'moment';
 
 import Input from '../components/UI/Inputs/Input/Input';
 import RInput from '../components/UI/RInput/RInput';
+import RSelect from '../components/UI/RSelect/Select';
 import Select from '../components/UI/Inputs/Select/Select';
 
 export const updateObject = (oldObject, updatedproperties) => {
@@ -96,6 +97,7 @@ export const getRInput = (field, handler) => {
       required={field.required}
       onChange={(e) => handler(e)}
       fontsize={field.fontsize}
+      bradius={field.bradius}
     />
   );
 }
@@ -112,6 +114,18 @@ export const getSelect = (field, options, handler, type) => {
     />
   );
 }
+export const getRSelect = (field, options, handler, type) => {
+  return (
+    <RSelect 
+      name={field.name}
+      value={field.value}
+      options={options}
+      onChange={(e) => handler(e, type)}
+      type={field.type}
+      bradius={field.bradius}
+    />
+  );
+}
 
 export const checkwhiteSpaces = (str) => {
   for(let i=0; i<str.length; i++) {
@@ -124,7 +138,7 @@ export const checkwhiteSpaces = (str) => {
 
 
 export const convertAddress = (address) => {
-  return `${address.streetAdd}, ${address.landmark}, ${address.city}-${address.pincode}, ${address.state}, ${address.country}`;
+  return `${address.streetAdd}, ${address.landmark}, ${address.city}-${address.pincode}, ${address.state}`;
 }
 
 export const validateFilters = (delivery, address, category, shopName) => {
@@ -159,7 +173,7 @@ export const compareItem = (a,b) => {
 
 export const filterCart = (itms, shopID) => {
   let items = itms.map(i => {
-    return { itemID: i._id, quantity: i.quantity };
+    return { itemID: i._id, quantity: i.quantity, mValue: i.mValue };
   });
   return {
     items,
@@ -194,7 +208,7 @@ const checkForNumber = (str) => {
 
 export const validateAddress = (address) => {
   let finalData = {};
-  let fields = [address.streetAdd, address.landmark, address.city, address.pincode, address.state, address.country]
+  let fields = [address.streetAdd, address.landmark, address.city, address.pincode];
   for(let i=0; i<fields.length; i++) {
     if(forEmpty(fields[i])) {
       return forEmpty(fields[i]);
@@ -202,6 +216,9 @@ export const validateAddress = (address) => {
     if(checkLimit(fields[i])) {
       return checkLimit(fields[i]);
     }
+  }
+  if(address.state.value === 'state*') {
+    return { valid: false, msg: `Please select state!` };
   }
   if(!checkForNumber(address.pincode.value)) {
     return { valid: false, msg: `Please enter valid ${address.pincode.placeholder}` };
@@ -211,8 +228,13 @@ export const validateAddress = (address) => {
     landmark: address.landmark.value,
     city: address.city.value,
     pincode: address.pincode.value,
-    state: address.state.value,
-    country: address.country.value
+    state: address.state.value
   }
   return { valid: true, data: finalData };
+}
+
+export const generateOptions = (list) => {
+  return list.map(e => {
+    return { name: e, value: e };
+  });
 }

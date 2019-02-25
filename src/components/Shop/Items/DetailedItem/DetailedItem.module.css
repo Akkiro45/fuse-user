@@ -14,9 +14,7 @@
   transition: all 0.3s ease-out;
   overflow: auto;
 }
-
 .Container {
-  /* background-color: aliceblue; */
   width: 100%;
   height: auto;
   max-width: 950px;
@@ -28,87 +26,91 @@
   height: 200px;
   border: 1px solid #ccc;
   float: left;
+  border-radius: 4px;
 }
 .Photo img {
   width: 100%;
   height: 100%;
-  /* max-width: 100%;
-  max-height: 100%;  */
+  border-radius: 4px;
 }
 .Info {
-  /* background-color: aqua; */
   width: calc(100% - 202px);
   height: 202px;
   float: right;
 }
 .CInfo {
-  /* background-color: #eee; */
   width: 98%;
   height: 100%;
   float: right;
 }
-.Top {
-  /* background-color: chartreuse;  */
+.Top,
+.Top1 {
   width: 100%;
   height: 202px;
 }
 .Bottom {
-  /* background-color: aquamarine; */
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .Name {
-  /* background-color: brown; */
   text-align: left;
   width: 100%;
-  /* height: 20px; */
   max-height: 40px;
   margin-bottom: 60px;
   font-weight: bold;
   font-size: 1.1em;
-  color: #006989;
+  color: #2874ff;
   overflow-x: hidden;
   overflow-y: auto;
-  /* word-break: break-all; */
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
 }
 .IB {
-  /* background-color: aquamarine; */
   width: 100%;
   height: 30px;
   margin-top: 10px;
 }
 .Category,
 .MUnit {
-  /* background-color: aqua; */
   width: 100%;
   height: 25px;
   margin-bottom: 5px;
   text-align: left;
   font-size: 1em;
-  color: #006989;
+  color: #444;
   font-weight: bold;
-  /* word-break: break-all; */
+  text-overflow: ellipsis;
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
 }
-
+.Unit {
+  width: fit-content;
+  float: left;
+  overflow: hidden;
+  word-break: break-all;
+}
+.Sap {
+  float: left;
+  margin: 0 5px;
+} 
+.Values {
+  width: 50px;
+  float: left;
+  text-align: left;
+}
 .Cotrolls {
   width: 50%;
   height: 100%;
   float: right;
 }
 .Incr {
-  /* background-color: aqua; */
   width: 60%;
   height: 100%;
   float: left;
 }
 .AddB {
-  /* background-color: blanchedalmond; */
   width: 35%;
   height: 100%;
   float: right;
@@ -120,8 +122,8 @@
   text-align: left;
   font-weight: bold;
   font-size: 1.2em;
-  color: #006989;
-  /* word-break: break-all; */
+  color: #2874ff;
+  text-overflow: ellipsis;
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
@@ -130,33 +132,49 @@
 .Description {
   border: 1px solid #eee;
   width: 100%;
+  height: 20px;
   max-height: 100px;
   overflow-x: hidden;
   overflow-y: auto;
-  word-break: break-all;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
   text-align: left;
   text-indent: 30px;
+  color: #444;
+  font-size: 1em;
+}
+.Select {
+  width: 70px;
+  height: 25px;
 }
 
 @media( max-width: 600px ) {
-  .Top {
+  .Top,
+  .Top1 {
     width: 100%;
-    height: 334px;
+    /* height: 334px; */
+    height: 320px;
+  }
+  .Top1 {
+    /* height: auto; */
   }
   .Photo {
     clear: both;
     width: 80%;
+    min-width: 200px;
     height: 150px;
     margin: auto;
     margin-left: 10%;
   }
   .Photo img {
-    max-width: 100%;
+    max-width: 200px;
     max-height: 100%;
   }
   .Info {
+    /* background-color: yellowgreen; */
     width: 100%;
-    height: 190px;
+    /* height: 165px; */
     clear: both;
   }
   .CInfo {
@@ -174,8 +192,21 @@
     clear: both;
     height: 30px;
   }
+  .MUnit,
+  .Category {
+    height: 20px;
+    margin-bottom: 3px;
+  }
+  .Price {
+    height: 35%;
+    margin-bottom: 6px;
+  }
   .Name {
     margin-bottom: 10px;
+    text-align: center;
+  }
+  .Description {
+    font-size: 14px;
   }
 }
 @media (min-width: 600px) {

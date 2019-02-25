@@ -1,19 +1,19 @@
 .Order {
+  background-color: white;
   width: 95%;
   height: auto;
-  margin: 40px auto;
-  border: 1px solid #87cefa;
+  margin: 25px auto;
+  border: 1px solid #ccc;
   box-shadow: 0 2px 3px #ccc;
+  border-radius: 4px;
 }
-
 .Header {
   width: 100%;
   height: 50px;
-  border-bottom: 15px solid #006989;
+  border-bottom: 5px solid #2874ff;
 }
 .Title {
-  /* background-color: aqua; */
-  color: #006989;
+  color: #2874ff;
   font-size: 1.2em;
   font-weight: bold;
   width: 92%;
@@ -21,24 +21,23 @@
   position: relative;
   top: 15px;
   overflow: hidden;
+  text-overflow: ellipsis;
   word-break: break-all;
 }
 .Status {
-  /* background-color: aliceblue; */
   width: 100%;
   height: auto;
 }
 .Footer {
   width: 100%;
   height: 35px;
-  border-top: 2px solid #006989;
+  border-top: 2px solid #2874ff;
   cursor: pointer;
   user-select: none;
 }
 .Window {
   width: 100%;
   height: auto;
-  /* background-color: aqua; */
 }
 .Summary {
   width: 96%;
@@ -46,30 +45,39 @@
 }
 
 .IconC {
-  /* background-color: blueviolet; */
   font-size: 1.5em;
   float: left;
   margin-top: 5px;
 }
 .FText {
-  /* background-color: aqua; */
   float: left;
   font-size: 1.2em;
   font-weight: bold;
-  color: #006989;
+  color: #2874ff;
   margin-top: 5px;
 }
 .OTitle {
-  color: #006989;
+  color: #2874ff;
   font-size: 1.2em;
   font-weight: bold;
   text-align: center;
   margin: 10px 0;
 } 
 .Items {
-  /* background-color: #eee; */
   width: 100%;
   max-height: 250px;
   overflow: auto;
   border-top: 1px solid #ccc;
+}
+
+@media( max-width: 650px ) {
+  .Footer {
+    height: 27px;
+  }
+  .FText {
+    font-size: 1em;
+  }
+  .IconC {
+    font-size: 1.2em;
+  }
 }

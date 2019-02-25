@@ -24,31 +24,32 @@ const success = (props) => {
       <div className={module.Container} >
         <Block 
           icon1={<ListIcon />}
-          icon2={<RightArrowIcon color='#006989' />}
+          icon2={<RightArrowIcon color='#2874ff' />}
           text1='Total Amount'
           text2={amt}
         />
         <hr />
         <Block 
           icon1={<VerifiedIcon />}
-          icon2={<RightArrowIcon color='#006989' />}
+          icon2={<RightArrowIcon color='#2874ff' />}
           text1='Payment'
           text2='Cash on Delivry'
         />
         <hr />
         <Block 
           icon1={<LocIcon />}
-          icon2={<RightArrowIcon color='#006989' />}
+          icon2={<RightArrowIcon color='#2874ff' />}
           text1='Delivery Address'
           text2={convertAddress(props.address)}
+          address
         />
       </div>
       <div className={module.Buttons} >
         <div className={module.StatusB} >
-          <Button onClick={() => props.onRedirect('status')} >Check Order Status</Button>
+          <Button bradius='4px' onClick={() => props.onRedirect('status')} >Check Order Status</Button>
         </div>
         <div className={module.ContinueB} >
-          <Button onClick={() => props.onRedirect('home')} >Continue Shopping</Button>
+          <Button bradius='4px' onClick={() => props.onRedirect('home')} >Continue Shopping</Button>
         </div>
       </div>
     </div>

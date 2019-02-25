@@ -2,7 +2,6 @@ import React from 'react';
 
 import module from './Header.module.css';
 import Nav from '../Nav/Nav';
-// import Logo from '../UI/Logo/Logo';
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle';
 
 const header = (props) => {
@@ -18,9 +17,6 @@ const header = (props) => {
     <div className={module.Header} >
       <div className={module.Container} >
         {toogleButton}
-        {/* <div className={module.Logo} >
-          <Logo />
-        </div > */}
         <div className={module.Fuse} >
           Fuse
         </div>

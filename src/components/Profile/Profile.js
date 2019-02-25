@@ -12,7 +12,7 @@ class Profile extends Component {
   state = {
     addrs: false,
     pageNumber: 1,
-    pageSize: 2,
+    pageSize: 20,
     addAddress: false
   }
   addAddressPopup = () => {
@@ -29,7 +29,7 @@ class Profile extends Component {
       this.props.fetchOrders(this.props.token, 1, this.state.pageSize);
       flag = false;
     }
-    this.setState({ addrs: flag, pageNumber: 1, pageSize: 2 });
+    this.setState({ addrs: flag, pageNumber: 1, pageSize: this.state.pageSize });
   }
   onScrollHandle = (e) => {
       if(!this.state.addrs) {

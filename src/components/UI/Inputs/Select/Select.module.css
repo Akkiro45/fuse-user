@@ -1,10 +1,11 @@
 .Select { 
+  background-color: white;
   width: auto;
   font-size: 0.9em;
   height: 30px;
-  color: #006989;
+  /* color: #2874ff; */
   padding: 3px;
-  border: 1px solid #006989;
+  border: 1px solid #2874ff;
   cursor: pointer;
   border-radius: 20px;
   outline: none;
@@ -12,44 +13,10 @@
 .Select:hover,
 .Select:focus,
 .Select:active {
-  border: 2px solid #33addd;
+  border: 2px solid #2874ff;
 }
 @media( max-width: 600px ) {
   .Select {
     font-size: 0.8em;
   }
 }
-
-/* 
-.Big,
-.Small,
-.Medium {
-  font-size: 1em;
-  padding: 0 7px;
-  border-radius: 20px;
-  height: 30px;
-  outline: none;
-  margin-bottom: 5px;
-  cursor: pointer;
-}
-.Big {
-  width: 93%;
-}
-.Medium {
-  width: 40%;
-}
-.Small {
-  width: 20%;
-}
-.Big:hover,
-.Big:active,
-.Big:focus,
-.Small:hover,
-.Small:active,
-.Small:focus,
-.Medium:hover,
-.Medium:active,
-.Medium:focus {
-  border: 2px solid #33addd;
-}
- */

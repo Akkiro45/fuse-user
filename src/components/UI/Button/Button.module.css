@@ -1,10 +1,11 @@
 .Button {
   width: 100%;
   height: 100%;
-  font-size: 1em;
-  background-color: #006989;
+  /* font-size: 1em; */
+  background-color: #2874ff;
   border: none;
   color: white;
   cursor: pointer;
   outline: none;
+  font-weight: 500;
 }

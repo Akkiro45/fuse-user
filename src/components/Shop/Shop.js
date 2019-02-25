@@ -15,18 +15,28 @@ class Shop extends Component {
     error: null,
     bucket: []
   }
-  addItemToBucket = (item) => {
+  addItemToBucket = (item, mValue) => {
     this.setState(prevState => {
       let bucket = [...prevState.bucket];
-      bucket = bucket.filter(i => i._id !== item._id);
+      bucket = bucket.filter(i => {
+        if(i._id !== item._id) {
+          return true;
+        } else {
+          if(i.mValue !== mValue) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      });
       bucket.unshift(item);
       return { bucket };
     });
   }
-  updateItemFromBucket = (itemID, add) => {
+  updateItemFromBucket = (itemID, add, mValue) => {
     this.setState(prevState => {
       let bucket = [...prevState.bucket];
-      let i = bucket.findIndex(itm => itm._id === itemID);
+      let i = bucket.findIndex(itm => ( itm._id === itemID && itm.mValue === mValue ));
       if(i !== -1) {
         if(add && bucket[i].quantity < 100) {
           bucket[i].quantity +=  1;
@@ -37,16 +47,26 @@ class Shop extends Component {
       }
     });
   }
-  removeItemFromBucket = (itemID) => {
+  removeItemFromBucket = (itemID, mValue) => {
     this.setState(prevState => {
       let bucket = [...prevState.bucket];
-      bucket = bucket.filter(i => i._id !== itemID);
+      bucket = bucket.filter(i => {
+        if(i._id !== itemID) {
+          return true;
+        } else {
+          if(i.mValue !== mValue) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      });
       return { bucket };
     });
   }
   onAddItem = (item, quantity) => {
     if(this.props.isAuth) {
-      this.addItemToBucket({ ...item, quantity });
+      this.addItemToBucket({ ...item, quantity }, item.mValue);
     } else {
       this.setState({ error: true });
     }

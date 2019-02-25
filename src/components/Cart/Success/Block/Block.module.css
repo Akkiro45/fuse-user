@@ -1,20 +1,21 @@
-.Block {
-  /* background-color: aqua; */
+.Block,
+.Block1 {
   width: 100%;
-  height: 85px;
+  height: 55px;
+}
+.Block1 {
+  height: 90px;
 }
 .Top {
-  /* background-color: blueviolet; */
   width: 100%;
   height: 22px;
   font-size: 1em;
   font-weight: bold;
-  color: #006989;
+  color: #2874ff;
   margin-bottom: 10px;
 }
 .Icon1,
 .Icon2 {
-  /* background-color: azure; */
   float: left;
   height: 100%;
   width: 20px;
@@ -22,27 +23,37 @@
 }
 .Text1,
 .Text2 {
-  /* background-color: chartreuse; */
   width: calc(100% - 30px);
   height: 100%;
   float: right;
 }
-.Bottom {
-  /* background-color: brown; */
+.Bottom,
+.Bottom1 {
   width: calc(100% - 40px);
-  height: 50px;
+  height: 25px;
   float: right;
   font-size: 1.1em;
   font-weight: bold;
-  color: black;
+  color: #444;
+}
+.Bottom1 {
+  height: 60px;
 }
 .Icon2 {
-  font-size: 1em;
+  font-size: 0.8em;
 }
 .Text2 {
-  /* width: calc(100% - 20px); */
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
   overflow: auto;
+  font-size: 14px;
+}
+@media( max-width: 650px ) {
+  .Block1 {
+    height: 100px;
+  }
+  .Bottom1 {
+    height:  70px;
+  }
 }

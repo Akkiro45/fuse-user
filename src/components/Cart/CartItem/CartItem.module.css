@@ -1,59 +1,65 @@
 .Cart {
-  /* background-color: aliceblue; */
-  width: 90%;
+  background-color: white;
+  width: 95%;
   max-width: 950px;
   height: auto;
-  margin: 30px auto;
-  border: 2px solid #87cefa;
-  box-shadow: 0 2px 3px #ccc;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.Cart:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .NameC {
   background-color: white;
-  /* background-color: aquamarine; */
   width: 100%;
   height: 60px;
-  border-bottom: 20px solid #006989;
+  border-bottom: 5px solid #2874ff;
 }
 .Name,
 .Footer {
-  /* background-color: blanchedalmond; */
   width: 95%;
   height: 42%;
   margin: auto;
   font-size: 1.3em;
   font-weight: bold;
-  color: #006989;
+  color: #2874ff;
   position: relative;
-  top: 29%;
+  top: 28%;
   word-break: break-all;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
 }
 .FooterC {
   width: 95%;
-  height: 50px;
-  background-color: #006989;
+  height: 45px;
+  background-color: #2874ff;
   color: white;
   margin: 10px auto;
   cursor: pointer;
+  border-radius: 4px;
 }
 .Footer {
   font-size: 1.2em;
+  height: 50%;
 }
 .Text {
   float: left;
   color: white;
 }
 .Icon {
-  /* background-color: aqua; */
+  margin-top: 1px;
   float: right;
 }
 .SName {
-  /* background-color: blueviolet; */
   width: calc(100% - 25px);
   float: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .CIcon {
-  /* background-color: chartreuse; */
   width: 22px;
   float: right;
 }

@@ -1,18 +1,16 @@
 .Filters {
-  /* background-color: aqua; */
   width: 90%;
   height: 95%;
   margin: auto;
   margin-top: 10%;
 }
 .Container {
-  /* background-color: blueviolet; */
   width: 100%;
   height: 34px;
   margin-bottom: 5px;
 }
 .Container span {
-  color: #006989;
+  color: #2874ff;
   font-weight: bold;
   font-size: 1em;
 }
@@ -21,12 +19,10 @@
   margin-top: -2.5px;
 }
 .CButton {
-  /* background-color: blueviolet; */
-  /* float: left; */
   width: 40px;
   text-decoration: underline;
   cursor: pointer;
-  color: #006989;
+  color: #2874ff;
   font-size: 1.1em;
 }
 .CButton:hover {

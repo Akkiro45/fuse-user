@@ -6,6 +6,7 @@ const button = (props) => {
   let style = {};
   if(props.bgcolor) style.backgroundColor = props.bgcolor;
   if(props.color) style.color = props.color;
+  if(props.bradius) style.borderRadius = props.bradius;
   return (
     <button style={style} className={module.Button} onClick={props.onClick} >{props.children}</button>
   )

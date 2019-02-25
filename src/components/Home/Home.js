@@ -9,7 +9,7 @@ import Aux from '../../hoc/Auxx/Auxx';
 import Spinner from '../UI/Spinner/Spinner';
 import * as actions from '../../store/actions/index';
 import { convertAddress } from '../../shared/utility';
- 
+
 class Home extends Component {
   componentDidMount() {
     if(this.props.shops.length === 0) {
@@ -27,11 +27,7 @@ class Home extends Component {
     this.props.history.push(shopSrchName);
   }
   render() {
-    let shops = (
-      <div className={module.Error} >
-        No shops found!
-      </div>
-    );
+    let shops = null;
     if(this.props.shops.length > 0) {
       shops = this.props.shops.map((s, i) => {
         return (
@@ -45,6 +41,12 @@ class Home extends Component {
             />
         );
       });
+    } else {
+      shops = (
+        <div className={module.Error} >
+          No shops found!
+        </div>
+      );
     }
     let extra = null;
     if(this.props.moreLoading) {
@@ -92,6 +94,7 @@ class Home extends Component {
             setFilters={this.props.setFilters}
             unsetFilters={this.props.unsetFilters}
             resetPageNumber={this.props.resetPageNumber}
+            addAddressPopup={this.props.addAddressPopup}
           />
         </div>
         {ren} 

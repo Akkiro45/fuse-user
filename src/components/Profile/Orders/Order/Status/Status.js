@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 
 import module from './Status.module.css';
 import Trackker from './Trackker/Trackker';
@@ -65,11 +64,11 @@ const Status = (props) => {
       </div>
     );
   }
-  let flag = true; 
-  const currTime = new Date().getTime();
-  let mininutes = moment(((acceptedTimeStamp + parseInt(props.expirationTime)))).format('m');
-  if(accepted && !((acceptedTimeStamp  + parseInt(props.expirationTime)) > currTime)) {
-    flag = false;
+  let flag = true;
+  if(accepted) {
+    if(!props.allowCancelOrder) {
+      flag = false;
+    }
   }
   let cancel = null;
   if(!cancelled && !rejected && !delivered && flag) {
@@ -79,7 +78,7 @@ const Status = (props) => {
           <CrossIcon onClick={props.cancelOrder} />
         </div>
         <div className={module.CancelText} >
-          Cancel Order {accepted ? 'In ' + mininutes + 'min' : null}
+          Cancel Order 
         </div>
       </div>
     );

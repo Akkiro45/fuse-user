@@ -2,7 +2,7 @@ import React from 'react';
 
 import module from './Items.module.css';
 import Item from './Item/Item';
-import { compareItem } from '../../../shared/utility';
+import { compareItem, capatalize } from '../../../shared/utility';
 
 const items = (props) => {
   let allItems = null;
@@ -24,7 +24,7 @@ const items = (props) => {
   return (
     <div className={module.Items} >
       <div className={module.Title} >
-        {props.category ? props.category + '\'s' : 'All'} Products
+        {props.category ? capatalize(props.category) : 'All'} Products
       </div>
       <div className={module.Container} >
         {allItems}

@@ -4,13 +4,11 @@
   border: 1px solid #ccc;
 }
 .Container {
-  /* background-color: blueviolet; */
   width: 90%;
   height: 90%;
   margin: 4px auto;
 } 
 .Addrs {
-  /* background-color: aqua; */
   width: 90%;
   height: 100%;
   float: left;
@@ -18,17 +16,17 @@
   word-wrap: break-word;
   hyphens: auto;
   overflow: auto;
+  text-overflow: ellipsis;
   font-size: 1em;
+  color: #444;
 }
 .CrossIcon {
-  /* background-color: aliceblue; */
   width: 10%;
   height: 100%;
   float: right;
   font-size: 1.5em;
 }
 .Icon {
-  /* background-color: blueviolet; */
   width: 22px;
   margin: auto;
   position: relative;
@@ -38,10 +36,13 @@
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  color: red;
+  color: #ff0000;
 }
 
 @media(max-width: 650px) {
+  .Addrs {
+    font-size: 13px;
+  }
   .Address {
     border-right: none;
     border-left: none;

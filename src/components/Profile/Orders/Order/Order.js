@@ -38,7 +38,8 @@ class Order extends Component {
       );
     });
     let window = null;
-    const total = parseInt(this.props.subTotal) + parseInt(this.props.deliveryCharge);
+    const t = parseInt(this.props.subTotal) + parseInt(this.props.deliveryCharge);
+    const total = 'Rs. ' + t;
     if(this.state.show) {
       window = (
         <div className={module.Window} >
@@ -46,23 +47,24 @@ class Order extends Component {
           <div className={module.Summary} >
             <Block 
               icon1={<ListIcon />}
-              icon2={<RightArrow color='#006989' />}
+              icon2={<RightArrow color='#2874ff' />}
               text1='Total Amount'
               text2={total}
             />
             <hr />
             <Block 
               icon1={<VerifiedIcon />}
-              icon2={<RightArrow color='#006989' />}
+              icon2={<RightArrow color='#2874ff' />}
               text1='Payment'
               text2='Cash on Delivery'
             />
             <hr />
             <Block 
               icon1={<LocIcon />}
-              icon2={<RightArrow color='#006989' />}
+              icon2={<RightArrow color='#2874ff' />}
               text1='Delivery Address'
               text2={convertAddress(this.props.address)}
+              address
             />  
           </div>
           <hr />
@@ -87,13 +89,13 @@ class Order extends Component {
         <div className={module.Status} >
           <Status 
             status={this.props.status}
-            expirationTime={this.props.expirationTime}
             cancelOrder={this.props.cancelOrder}
             loading={this.props.cancelLoading}
             error={this.props.cancelError}
             orderID={this.props.orderID}
             currID={this.props.currID}
             deliveryTime={this.props.deliveryTime}
+            allowCancelOrder={this.props.allowCancelOrder}
           />
         </div>
         {window}

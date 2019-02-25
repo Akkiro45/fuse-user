@@ -14,7 +14,7 @@ const shopCard = (props) => {
 			</div>
 			<div className={module.Photo} >
 				{/* eslint-disable-next-line */}
-				<img src={props.src ? props.src : 'https://www.image.ie/images/no-image.png'}  />
+				<img src={props.src ? props.src : 'https://as2.ftcdn.net/jpg/01/24/00/49/500_F_124004924_EjrA0S1BFvp3ScWCFMzRcgTnDuX3dGZh.jpg'}  />
 			</div>
 			<div className={module.Data} >
 				<div className={module.Inner} >

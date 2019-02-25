@@ -39,7 +39,7 @@ const orders = (props) => {
           deliveryCharge={ord.deliveryCharge}
           subTotal={ord.totalCost}
           deliveryTime={ord.deliveryTime}
-          expirationTime={ord.expirationTime}
+          allowCancelOrder={ord.allowCancelOrder}
           shopName={ord.shopName}
           status={ord.status}
           cancelOrder={() => props.cancelOrder(props.token, ord._id)}

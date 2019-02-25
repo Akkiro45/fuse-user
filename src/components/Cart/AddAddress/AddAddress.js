@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import module from './AddAddress.module.css';
-import { getRInput, updateObject } from '../../../shared/utility';
+import { getRInput, getRSelect, updateObject } from '../../../shared/utility';
 import Button from '../../UI/Button/Button';
 import Spinner from '../../UI/Spinner/Spinner';
 import * as actions from '../../../store/actions/index';
+import { states } from '../../../shared/options';
 
 class AddAddress extends Component {
   state = {
@@ -18,7 +19,8 @@ class AddAddress extends Component {
         minLength: '1',
         maxLength: '400',
         required: true,
-        fontsize: '16px'
+        fontsize: '16px',
+        bradius: '4px'
       },
       landmark: {
         type: 'text',
@@ -28,7 +30,8 @@ class AddAddress extends Component {
         minLength: '1',
         maxLength: '200',
         required: true,
-        fontsize: '16px'
+        fontsize: '16px',
+        bradius: '4px'
       },
       city: {
         type: 'text',
@@ -38,7 +41,8 @@ class AddAddress extends Component {
         minLength: '1',
         maxLength: '200',
         required: true,
-        fontsize: '16px'
+        fontsize: '16px',
+        bradius: '4px'
       },
       pincode: {
         type: 'tel',
@@ -48,29 +52,22 @@ class AddAddress extends Component {
         minLength: '6',
         maxLength: '6',
         required: true,
-        fontsize: '16px'
+        fontsize: '16px',
+        bradius: '4px'
       },
       state: {
-        type: 'text',
-        placeholder: 'State',
-        value: '',
+        value: 'state*',
         name: 'state',
-        minLength: '1',
-        maxLength: '200',
-        required: true,
-        fontsize: '16px'
-      },
-      country: {
-        type: 'text',
-        placeholder: 'Country',
-        value: 'India',
-        name: 'country',
-        minLength: '1',
-        maxLength: '300',
-        required: true,
-        fontsize: '16px'
+        type: 3,
+        bradius: '4px'
       }
     }
+  }
+  onSelectHandler = (e, type) => {
+    let field;
+    field = updateObject(this.state.data[type], { value: e.target.value });
+    let data = updateObject(this.state.data, { [type]: field });
+    this.setState({ data });
   }
   inputChangeHandler = (e) => {
     const updatedField = updateObject(this.state.data[e.target.name], { value: e.target.value });
@@ -86,17 +83,21 @@ class AddAddress extends Component {
     return true;
   }
   render() {
-    // if(this.props.success) {
-    //   this.props.addressOpClearError();
-    //   this.props.off();
-    // }
     let inputs = Object.keys(this.state.data).map(field => {
-      return (
-        <div className={module.Input} key={field} >
-          {getRInput(this.state.data[field], this.inputChangeHandler)}
-        </div>
-      )
-    })
+      if(field === 'state') {
+        return (
+          <div className={module.Select} key={field} >
+            {getRSelect(this.state.data[field], states, this.onSelectHandler, 'state')}
+          </div>
+        )
+      } else {
+        return (
+          <div className={module.Input} key={field} >
+            {getRInput(this.state.data[field], this.inputChangeHandler)}
+          </div>
+        );
+      }
+    });
     let error = null;
     if(this.props.error) {
       error = (
@@ -112,7 +113,7 @@ class AddAddress extends Component {
           {inputs}
         </div>
         <div className={module.Button} >
-          <Button onClick={() => this.props.addAddress(this.props.token, this.state.data)} >
+          <Button bradius='4px' onClick={() => this.props.addAddress(this.props.token, this.state.data)} >
             Add Address
           </Button>
         </div>

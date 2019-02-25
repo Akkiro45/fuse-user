@@ -6,6 +6,7 @@ import Backdrop from '../../../UI/Backdrop/Backdrop';
 import Label from '../../Label/Label';
 import Incr from '../../Incr/Incr';
 import Button from '../../../UI/Button/Button';
+import { checkwhiteSpaces, getRSelect, generateOptions } from '../../../../shared/utility';
 
 const detailedItem = (props) => {
   let controlls = null;
@@ -20,11 +21,57 @@ const detailedItem = (props) => {
             />
           </div>
           <div className={module.AddB} >
-            <Button onClick={props.onAddItem} >Add</Button>
+            <Button bradius='4px' bgcolor='#00d348' onClick={props.onAddItem} >Add</Button>
           </div>
         </div>
       );
     }
+  let description = null; 
+  if(!checkwhiteSpaces(props.item.description)) {
+    description = (
+      <div className={module.Bottom} >
+        <Label>About Item :</Label>
+        <div className={module.Description} >
+          {props.item.description}
+        </div>
+      </div>
+    );
+  }
+  let mValues = null;
+    if(props.item.mpValues.length === 1) {
+      mValues = props.item.mpValues[0].mValue;
+    } else {
+      const ops = props.item.mpValues.map(mpv => mpv.mValue);
+      mValues = (
+        <div className={module.Select} >
+          {getRSelect(props.mValue, generateOptions(ops), props.onSelectHandler, 'mValue')}
+        </div>
+      );
+    }
+    let mUnit = (
+      <div className={module.MUnit} >
+        {props.item.mUnit} : {mValues}
+      </div>  
+    );
+    if(props.item.mpValues.length > 1) {
+      mUnit = (
+        <div className={module.MUnit} >
+          <div className={module.Unit} >
+            {props.item.mUnit}
+          </div>
+          <div className={module.Sap} >
+            :
+          </div>
+          <div className={module.Values} >
+            {mValues}
+          </div>
+        </div>
+      );
+    }
+  let className = module.Top;
+  if(props.isStatic) {
+    className = module.Top1;
+  }
   return (
     <Aux>
       <div 
@@ -34,10 +81,10 @@ const detailedItem = (props) => {
           opacity: props.show ? '1' : '0'}}
       >
         <div className={module.Container} >
-          <div className={module.Top} >
+          <div className={className} >
             <div className={module.Photo} >
               {/* eslint-disable-next-line */}
-              <img src={props.item.src ? props.item.src : 'https://www.image.ie/images/no-image.png'} className={module.Img} />
+              <img src={props.item.src ? props.item.src : 'https://cdn.fstoppers.com/styles/full/s3/media/2015/12/07/white_background_bag_after.jpg'} className={module.Img} />
             </div>
             <div className={module.Info} >
               <div className={module.CInfo} >
@@ -47,24 +94,17 @@ const detailedItem = (props) => {
                 <div className={module.Category} >
                   {props.item.category}
                 </div>
-                <div className={module.MUnit} >
-                  {props.item.mUnit} : {props.item.mValue}
-                </div>
+                {mUnit}
                 <div className={module.IB} >
                   <div className={module.Price} >
-                    Rs. {props.item.price}
+                    Rs. {props.price}
                   </div>
                   {controlls}
                 </div>
               </div>
             </div>
           </div>
-          <div className={module.Bottom} >
-            <Label>About Item :</Label>
-            <div className={module.Description} >
-              {props.item.description}
-            </div>
-          </div>
+          {description}
         </div>
       </div>
       <Backdrop show={props.show} onclick={props.onDetail}/>

@@ -5,15 +5,15 @@
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
+  text-overflow: ellipsis;
   border-top: 1px solid #ccc;
   padding: 5px 0;
 }
 .MainLabel {
-  color: #006989;
+  color: #2874ff;
   font-weight: bold;
 }
 .Label {
-  /* background-color: aqua; */
   width: 100px;
 }
 .Container {
@@ -21,7 +21,7 @@
 }
 .Time {
   margin-left: 10px;
-  color: #006989;
+  color: #2874ff;
   font-weight: bold;
 }
 

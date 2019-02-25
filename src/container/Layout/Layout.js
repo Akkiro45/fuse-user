@@ -11,12 +11,20 @@ import Home from '../../components/Home/Home';
 import Cart from '../../components/Cart/Cart';
 import Profile from '../../components/Profile/Profile';
 import Shop from '../Shop/Shop';
+import AddAddress from '../../components/Cart/AddAddress/AddAddress';
+import Popup from '../../hoc/ErrorHandler/ErrorHandler';
 
 class Layout extends Component {
   state = {
     showSideDrawer: false,
-    pageSize: 10,
-    pageNumber: 1
+    pageSize: 20,
+    pageNumber: 1,
+    showAddAddress: false
+  }
+  addAddressPopup = () => {
+    this.setState(prevState => {
+      return { showAddAddress: !prevState.showAddAddress };
+    });
   }
   increasePageNumber = () => {
     this.setState(prevState => {
@@ -35,6 +43,15 @@ class Layout extends Component {
     });
   }
   render(){
+    let addAddress = null;
+    if(this.state.showAddAddress) {
+      addAddress = (
+        <Popup
+          error={<AddAddress off={this.addAddressPopup} />}
+          errorConformedhandler={this.addAddressPopup}
+        />
+      );
+    }
     let show = null;
     if(this.props.type === 'shop') {
       show = <Shop />
@@ -45,11 +62,13 @@ class Layout extends Component {
                 pageNumber={this.state.pageNumber}
                 pageSize={this.state.pageSize}
                 increasePageNumber={this.increasePageNumber}
-                resetPageNumber={this.resetPageNumber} />
+                resetPageNumber={this.resetPageNumber}
+                addAddressPopup={this.addAddressPopup} />
     else if(this.props.type === 'cart') show = <Cart />
     else if(this.props.type === 'profile') show = <Profile />
     return (
       <div className={module.Layout} >
+        {addAddress}
         <SideDrawer 
           isAuth={this.props.isAuthenticated}
           open={this.state.showSideDrawer} 
@@ -60,7 +79,8 @@ class Layout extends Component {
           address={this.props.address}
           setFilters={this.props.setFilters}
           unsetFilters={this.props.unsetFilters}
-          resetPageNumber={this.resetPageNumber} />
+          resetPageNumber={this.resetPageNumber}
+          addAddressPopup={this.addAddressPopup} />
         <div>
           <Header 
             openSideDrawerHandler={this.openSideDrawerHandler}

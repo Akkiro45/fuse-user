@@ -43,7 +43,7 @@ class Bucket extends Component {
             </div>
           </div>
           <div className={module.Button} >
-            <Button bgcolor='#27DF46' onClick={this.props.addToCart} >Add to Cart</Button>
+            <Button bgcolor='#00d348' onClick={this.props.addToCart} >Add to Cart</Button>
           </div>  
         </div>
       </div>

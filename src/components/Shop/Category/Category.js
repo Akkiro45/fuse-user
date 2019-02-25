@@ -25,7 +25,7 @@ const category = (props) => {
   return (
     <div className={module.Category} >
       <div className={module.Title} >
-        CATEGORIES
+        Categories
       </div>
       <div className={module.Container} >
         {categories}

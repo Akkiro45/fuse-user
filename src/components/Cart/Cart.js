@@ -129,8 +129,12 @@ class Cart extends Component {
         />
       );
     }
+    let className = module.Cart;
+    if(this.state.confirmation || this.state.success) {
+      className = module.Cart1;
+    }
     return (
-      <div className={module.Cart} >
+      <div className={className} >
         {emptyMsg}
         {loading}
         {error}

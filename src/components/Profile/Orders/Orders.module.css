@@ -1,11 +1,10 @@
 .Orders {
-  /* background-color: aliceblue; */
   width: 100%;
   max-width: 950px;
 }
 .EmptyMsg,
 .ErrorMsg {
-  color: #006989;
+  color: #2874ff;
   font-size: 1.2em;
   font-weight: bold;
   text-align: center;
@@ -13,6 +12,6 @@
   margin-bottom: 30px;
 }
 .ErrorMsg {
-  color: red;
+  color: #ff0000;
   margin-bottom: 30px;
 }

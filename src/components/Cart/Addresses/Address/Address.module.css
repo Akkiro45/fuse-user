@@ -12,8 +12,8 @@
   word-wrap: break-word;
   hyphens: auto;
   overflow: auto;
-  font-size: 1em;
-  
+  text-overflow: ellipsis;
+  font-size: 14px;
 }
 .Button {
   width: 30%;
@@ -26,4 +26,9 @@
   margin: auto;
   position: relative;
   top: 17px;
+}
+@media( max-width: 650px ) {
+  .Add {
+    font-size: 12px;
+  }
 }

@@ -3,15 +3,14 @@
   height: 100%;
 }
 .Sidebar {
-  /* background-color: aqua; */
   width: 200px;
   height: 100%;
-  border-right: 2px solid #006989;
+  border-right: 2px solid #2874ff;
   float: left;
   background-color: #eee;
 }
 .Window {
-  /* background-color: antiquewhite; */
+  background-color: #fafafa;
   float: left;
   width: calc(100% - 202px);
   height: 100%;
@@ -20,13 +19,13 @@
 .Error {
   position: relative;
   top: 40%;
-  color: #006989;
+  color: #2874ff;
   font-weight: bold;
   font-size: 1.2em;
   text-align: center;
 }
 .Exta {
-  color: #006989;
+  color: #2874ff;
   font-size: 1.5em;
   text-align: center;
   font-weight: bold;
@@ -46,5 +45,9 @@
   }
   .Spinner {
     left: 0;
+  }
+  .Error,
+  .Exta {
+    font-size: 1em;
   }
 }

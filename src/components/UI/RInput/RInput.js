@@ -5,6 +5,7 @@ import module from './RInput.module.css';
 const input = (props) => {
   let style = {};
   if(props.fontsize) style.fontSize = props.fontsize;
+  if(props.bradius) style.borderRadius = props.bradius;
   return (
     <input 
       className={module.Input}

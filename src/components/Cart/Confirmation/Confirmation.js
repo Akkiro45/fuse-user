@@ -92,22 +92,22 @@ class Confirmation extends Component {
         <div className={module.PInfo} >
           <div className={module.TitleBox} >
             <div className={module.Left} >
-              <RightArrow color='#006989' />
+              <RightArrow color='#2874ff' />
             </div>
             <div className={module.Right} >
               Personal Information
             </div>
           </div>
           <div className={module.Info} >
-             <div>{capatalize(this.props.firstName)} {capatalize(this.props.lastName)}</div>
-             <div>{this.props.phoneNumber}</div>
+            <div>{capatalize(this.props.firstName)} {capatalize(this.props.lastName)}</div>
+            <div>{this.props.phoneNumber}</div>
           </div>
         </div>
         <hr />
         <div className={module.Address} >
           <div className={module.TitleBox} >
             <div className={module.Left} >
-              <RightArrow color='#006989' />
+              <RightArrow color='#2874ff' />
             </div>
             <div className={module.Right} >
               Delivery Address
@@ -116,10 +116,10 @@ class Confirmation extends Component {
           {address}
           <div className={module.Buttons} >
             <div className={module.SAdd} >
-              <Button onClick={this.onClickAddresses} >Select Address</Button>
+              <Button bradius='4px' onClick={this.onClickAddresses} >Select Address</Button>
             </div>
             <div className={module.AAdd} >
-              <Button onClick={this.onClickAddAddress} >Add New Address</Button>
+              <Button bradius='4px' onClick={this.onClickAddAddress} >Add New Address</Button>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@ class Confirmation extends Component {
         <div className={module.Payment} >
           <div className={module.TitleBox} >
             <div className={module.Left} >
-              <RightArrow color='#006989' />
+              <RightArrow color='#2874ff' />
             </div>
             <div className={module.Right} >
               Payment
@@ -143,7 +143,7 @@ class Confirmation extends Component {
           </div>
           {errorMsg}
           <div className={module.Button} >
-            <Button onClick={this.onPlaceOrder} >Place Order</Button>
+            <Button bradius='4px' onClick={this.onPlaceOrder} >Place Order</Button>
           </div>
         </div>
       </div>

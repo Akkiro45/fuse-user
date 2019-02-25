@@ -1,20 +1,17 @@
 .Category {
-  /* background-color: cadetblue; */
   width: 95%;
-  height: 220px;
+  height: 150px;
   margin: 20px auto;
   max-width: 950px;
-  border-bottom: 2px solid #006989;
+  border-bottom: 2px solid #2874ff;
 }
 .Title {
-  /* background-color: aqua; */
   font-size: 1.1em;
   height: 30px;
   font-weight: bold;
-  color: #006989;
+  color: #2874ff;
 }
 .Container {
-  /* background-color: darkgray; */
   width: 100%;
   height: calc(100% - 30px);
   overflow-x: auto;
@@ -25,7 +22,7 @@
 @media( max-width: 650px ) {
   .Category {
     width: 100%;
-    height: 200px;
+    height: 130px;
   }
   .Title {
     font-size: 1em;

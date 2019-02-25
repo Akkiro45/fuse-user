@@ -23,7 +23,8 @@ const sideDrawer = (props) => {
         pageSize={props.pageSize}
         setFilters={props.setFilters}
         unsetFilters={props.unsetFilters}
-        resetPageNumber={props.resetPageNumber} />
+        resetPageNumber={props.resetPageNumber}
+        addAddressPopup={props.addAddressPopup} />
     </div>
   </Aux>
   );

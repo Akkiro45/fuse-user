@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoIosCloseCircle } from 'react-icons/io';
+import { MdCancel } from 'react-icons/md';
 
 import classes from './Cross.module.css';
 
@@ -10,7 +10,7 @@ const cross = (props) => {
     }
     return (
         <div className={classes.change} style={style} onClick={props.onClick} >
-            <IoIosCloseCircle  />
+            <MdCancel  />
         </div>
     );
 }

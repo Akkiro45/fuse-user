@@ -1,28 +1,23 @@
 .Status {
-  /* background-color: aliceblue; */
   padding-bottom: 10px;
   width: 100%;
-  /* height: 200px; */
 }
 .CancelMsg {
-  /* background-color: aliceblue; */
   width: 100%;
   height: 25px;
   margin: 20px 0;
   text-align: center;
   font-size: 1.2em;
-  color: red;
+  color: #ff0000;
   font-weight: bold;
 }
 .Cancel {
-  /* background-color: aliceblue; */
   width: 100%;
   height: 50px;
   margin: 15px 0;
   text-align: center;
 }
 .CIcon {
-  /* background-color: yellow; */
   height: 25px;
   display: inline-block;
   font-size: 1.5em;
@@ -30,5 +25,5 @@
 .CancelText {
   font-size: 1em;
   font-weight: bold;
-  color: red;
+  color: #ff0000;
 }

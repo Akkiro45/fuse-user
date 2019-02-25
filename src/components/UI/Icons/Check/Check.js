@@ -1,12 +1,12 @@
 import React from 'react';
-import { IoMdCheckmarkCircle } from 'react-icons/io';
+import { MdCheckCircle } from 'react-icons/md';
 
 import classes from './Check.module.css';
 
 const check = () => {
     return (
         <div className={classes.change}>
-            <IoMdCheckmarkCircle />
+            <MdCheckCircle />
         </div>
     );
 }

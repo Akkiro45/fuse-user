@@ -1,5 +1,4 @@
 .Success {
-  /* background-color: aliceblue; */
   width: 85%;
   height: fit-content;
   margin: 20px auto;
@@ -12,7 +11,7 @@
   font-size: 2.5em;
 }
 .Text {
-  color: #006989;
+  color: #2874ff;
   font-weight: bold;
 }
 .Container {
