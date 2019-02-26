@@ -90,9 +90,6 @@ class Item extends Component {
       const item = {
         ...this.props.item
       };
-      // item.mValues = item.mValue;
-      // item.mValue = this.state.mValue.value;
-      // item.mpValues = item.mpValues;
       item.mValue = this.state.mValue.value;
       item.price = this.state.price;
       controlls = (

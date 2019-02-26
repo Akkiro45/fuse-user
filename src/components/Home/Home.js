@@ -9,6 +9,7 @@ import Aux from '../../hoc/Auxx/Auxx';
 import Spinner from '../UI/Spinner/Spinner';
 import * as actions from '../../store/actions/index';
 import { convertAddress } from '../../shared/utility';
+import Add from './Add/Add';
 
 class Home extends Component {
   componentDidMount() {
@@ -59,8 +60,9 @@ class Home extends Component {
     ren = (
       <Aux>
         <div className={module.Window} onScroll={this.onScrollHandle}>
-            {shops}
-            {extra}
+          <Add />
+          {shops}
+          {extra}
         </div>
       </Aux>
     ); 

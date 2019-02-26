@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import module from './AddAddress.module.css';
-import { getRInput, getRSelect, updateObject } from '../../../shared/utility';
+import { getRInput, getRSelect, updateObject, getDistrictsOptions } from '../../../shared/utility';
 import Button from '../../UI/Button/Button';
 import Spinner from '../../UI/Spinner/Spinner';
 import * as actions from '../../../store/actions/index';
@@ -33,17 +33,6 @@ class AddAddress extends Component {
         fontsize: '16px',
         bradius: '4px'
       },
-      city: {
-        type: 'text',
-        placeholder: 'City',
-        value: '',
-        name: 'city',
-        minLength: '1',
-        maxLength: '200',
-        required: true,
-        fontsize: '16px',
-        bradius: '4px'
-      },
       pincode: {
         type: 'tel',
         placeholder: 'Pincode',
@@ -60,14 +49,37 @@ class AddAddress extends Component {
         name: 'state',
         type: 3,
         bradius: '4px'
+      },
+      district: {
+        value: 'district*',
+        name: 'district',
+        bradius: '4px'
       }
-    }
+    },
+    districtsOp: [
+      { name: 'district*', value: 'district*' }
+    ]
   }
   onSelectHandler = (e, type) => {
     let field;
     field = updateObject(this.state.data[type], { value: e.target.value });
     let data = updateObject(this.state.data, { [type]: field });
-    this.setState({ data });
+    let districtsOp = this.state.districtsOp;
+    let district;
+    if(type === 'state') {
+      district = updateObject(this.state.data.district, { value: 'district*' });
+      if(e.target.value !== 'state*') {
+        districtsOp = getDistrictsOptions(e.target.value);
+      } else {
+        districtsOp = [
+          { name: 'district*', value: 'district*' }
+        ];
+      }
+    }
+    if(type === 'state') {
+      data = updateObject(data, { district });
+    }
+    this.setState({ data, districtsOp });
   }
   inputChangeHandler = (e) => {
     const updatedField = updateObject(this.state.data[e.target.name], { value: e.target.value });
@@ -88,6 +100,12 @@ class AddAddress extends Component {
         return (
           <div className={module.Select} key={field} >
             {getRSelect(this.state.data[field], states, this.onSelectHandler, 'state')}
+          </div>
+        )
+      } else if(field === 'district') {
+        return (
+          <div className={module.Select} key={field} >
+            {getRSelect(this.state.data[field], this.state.districtsOp, this.onSelectHandler, 'district')}
           </div>
         )
       } else {

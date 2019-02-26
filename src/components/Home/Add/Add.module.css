@@ -1,0 +1,37 @@
+.Add {
+  width: 85%;
+  max-width: 950px;
+  border: 1px solid #2874ff;
+  background-color: white;
+  margin: 10px auto;
+  border-radius: 4px;
+}
+.Msg1 {
+  color: #2874ff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+}
+.Msg2 {
+  color: #2874ff;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  margin: 20px 0;
+}
+.Msg2 a:hover {
+  color: #b0ccff;
+}
+
+@media( max-width: 650px ) {
+  .Add {
+    width: 95%;
+  }
+  .Msg1 {
+    font-size: 16px;
+  }
+  .Msg2 {
+    font-size: 14px;
+  }
+}

@@ -5,6 +5,7 @@ import Input from '../components/UI/Inputs/Input/Input';
 import RInput from '../components/UI/RInput/RInput';
 import RSelect from '../components/UI/RSelect/Select';
 import Select from '../components/UI/Inputs/Select/Select';
+import * as districts from './statewisedistrict';
 
 export const updateObject = (oldObject, updatedproperties) => {
   return {
@@ -208,7 +209,7 @@ const checkForNumber = (str) => {
 
 export const validateAddress = (address) => {
   let finalData = {};
-  let fields = [address.streetAdd, address.landmark, address.city, address.pincode];
+  let fields = [address.streetAdd, address.landmark, address.pincode];
   for(let i=0; i<fields.length; i++) {
     if(forEmpty(fields[i])) {
       return forEmpty(fields[i]);
@@ -220,13 +221,16 @@ export const validateAddress = (address) => {
   if(address.state.value === 'state*') {
     return { valid: false, msg: `Please select state!` };
   }
+  if(address.district.value === 'district*') {
+    return { valid: false, msg: `Please select district!` };
+  }
   if(!checkForNumber(address.pincode.value)) {
     return { valid: false, msg: `Please enter valid ${address.pincode.placeholder}` };
   }
   finalData = {
     streetAdd: address.streetAdd.value,
     landmark: address.landmark.value,
-    city: address.city.value,
+    city: address.district.value,
     pincode: address.pincode.value,
     state: address.state.value
   }
@@ -237,4 +241,11 @@ export const generateOptions = (list) => {
   return list.map(e => {
     return { name: e, value: e };
   });
+}
+
+export const getDistrictsOptions = (state) => {
+  if(state !== 'state*') {
+    state = state.split(' ').join('');
+    return districts[state];
+  }
 }

@@ -11,6 +11,7 @@ import LinkLabel from '../SocialLinkLabel/SocialLinkLabel';
 import FaceBookIcon from '../../UI/Icons/FaceBook/FaceBook';
 import InstagramIcon from '../../UI/Icons/Instagram/Instagram';
 import TwitterIcon from '../../UI/Icons/Twitter/Twitter';
+import ShopPhoto from '../../../assets/Img/ShopPhoto.png';
 
 class ShopProfile extends Component {
   state = {
@@ -101,7 +102,8 @@ class ShopProfile extends Component {
           <div className={module.SInfo} >
             <div className={module.Photo} >
               {/* eslint-disable-next-line */}
-              <img src={this.props.src ? this.props.src : 'https://as2.ftcdn.net/jpg/01/24/00/49/500_F_124004924_EjrA0S1BFvp3ScWCFMzRcgTnDuX3dGZh.jpg'}  />
+              <img src={this.props.src ? this.props.src : ShopPhoto}  />
+              {/* <img src={this.props.src ? this.props.src : 'https://as2.ftcdn.net/jpg/01/24/00/49/500_F_124004924_EjrA0S1BFvp3ScWCFMzRcgTnDuX3dGZh.jpg'}  /> */}
             </div>
             <div className={module.Address} >
               <div className={module.Add} >
