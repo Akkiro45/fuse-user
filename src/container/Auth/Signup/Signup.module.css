@@ -45,7 +45,7 @@
 
 .Signup .Box .Left .Text {
   position: relative;
-  top: 38%;
+  top: 32%;
 }
 
 .Signup .Box .Right {
@@ -66,12 +66,13 @@
 .TAC {
   margin: auto;
   width: 100%;
-  margin-top: 10px;
+  margin: 10px 0;
   height: 35px;
 }
 .TAC1 {
   margin: auto;
   width: 40%;
+  /* margin-bottom: 10px; */
 }
 .CheckBox {
   float: left;

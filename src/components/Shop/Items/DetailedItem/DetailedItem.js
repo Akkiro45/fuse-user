@@ -84,7 +84,7 @@ const detailedItem = (props) => {
           <div className={className} >
             <div className={module.Photo} >
               {/* eslint-disable-next-line */}
-              <img src={props.item.src ? props.item.src : 'https://cdn.fstoppers.com/styles/full/s3/media/2015/12/07/white_background_bag_after.jpg'} className={module.Img} />
+              <img src={props.src} className={module.Img} />
             </div>
             <div className={module.Info} >
               <div className={module.CInfo} >

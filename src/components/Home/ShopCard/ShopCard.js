@@ -3,8 +3,13 @@ import React  from 'react';
 import module from './ShopCard.module.css';
 import PlayArrow from '../../UI/Icons/PlayArrow/PlayArrow';
 import ShopPhoto from '../../../assets/Img/ShopPhoto.png';
+import { awsS3BucketUrl } from '../../../shared/utility';
 
 const shopCard = (props) => {
+	let src = ShopPhoto;
+	if(props.src) {
+		src = awsS3BucketUrl + props.src.name;
+	}
 	let category =  props.category.map(c => {
 		return c.category;
 	}).join(', ');
@@ -15,8 +20,7 @@ const shopCard = (props) => {
 			</div>
 			<div className={module.Photo} >
 				{/* eslint-disable-next-line */}
-				<img src={props.src ? props.src : ShopPhoto } />
-				{/* <img src={props.src ? props.src : 'https://as2.ftcdn.net/jpg/01/24/00/49/500_F_124004924_EjrA0S1BFvp3ScWCFMzRcgTnDuX3dGZh.jpg'}  /> */}
+				<img src={src} />
 			</div>
 			<div className={module.Data} >
 				<div className={module.Inner} >

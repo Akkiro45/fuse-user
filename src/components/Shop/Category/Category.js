@@ -13,7 +13,7 @@ const category = (props) => {
         <Cat 
           key={i}
           name={c.category}
-          // src={flag.photo.name}
+          src={flag.photo.name}
           active={props.category}
           onClick={() => props.onCatClick(c.category)}
         />

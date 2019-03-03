@@ -3,9 +3,14 @@ import React, { Component } from 'react';
 import module from './Item.module.css';
 import CrossIcon from '../../../UI/Icons/Cross/Cross';
 import Incr from '../../../Shop/Incr/Incr';
+import { awsS3BucketUrl } from '../../../../shared/utility';
 
 class Item extends Component {
   render() {
+    let src = null;
+    if(this.props.src) {
+      src = awsS3BucketUrl + this.props.src;
+    }
     let p = (
       <div className={module.Price} >
         <div>Rs. {this.props.price * this.props.quantity}</div>
@@ -34,7 +39,8 @@ class Item extends Component {
       <div className={module.Item} >
         <div className={module.Container} >
           <div className={module.Photo} >
-            <img src={this.props.src ? this.props.src : 'https://cdn.fstoppers.com/styles/full/s3/media/2015/12/07/white_background_bag_after.jpg'} alt={this.props.name} />
+            {/* eslint-disable-next-line */}
+            <img src={src} />
           </div>
           <div className={module.Both} >
             <div className={module.Info} >

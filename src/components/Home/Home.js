@@ -39,6 +39,7 @@ class Home extends Component {
             address={convertAddress(s.shopAddress[0])}
             category={s.shopCategories}
             onShopClick={() => this.onShopClick(s.shopSrchName)}
+            src={s.shopPhotos[0]}
             />
         );
       });

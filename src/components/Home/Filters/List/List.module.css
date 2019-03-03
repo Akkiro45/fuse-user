@@ -1,0 +1,57 @@
+.List {
+  width: 100%;
+  height: 100%;
+  /* background-color: white; */
+}
+.Icon {
+  font-size: 1.5em;
+  width: 25px;
+  height: 25px;
+}
+.Input {
+  width: calc(100% - 10px);
+  height: 26px;
+  border: none;
+  background-color: white;
+  border-bottom: 2px solid #b0ccff;
+  outline: none;
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+.Input:hover,
+.Input:focus {
+  border-bottom: 2px solid #2874ff;
+}
+.Options {
+  width: 100%;
+  max-height: calc(100% - 90px);
+  background-color: white;
+  margin-top: 10px;
+  overflow: auto;
+  border: 1px solid white;
+  border-left: none;
+  border-right: none;
+}
+.Option,
+.Invalid {
+  width: 100%;
+  height: 25px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  line-height: 25px;
+  word-break: break-all;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #444;
+  cursor: pointer;
+}
+.Option:hover {
+  background-color: #eee;
+}
+.Invalid {
+  cursor: default;
+  background-color: white;
+  user-select: none;
+}

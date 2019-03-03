@@ -26,5 +26,35 @@
   font-size: 1.1em;
 }
 .CButton:hover {
-  color: #33addd;
+  color: #b0ccff  ;
+}
+.District {
+  width: 150px;
+  height: 80%;
+  border: 1px solid #2874ff;
+  border-radius: 40px;
+  cursor: pointer;
+  background-color: white;
+}
+.District:hover {
+  border: 2px solid #2874ff;
+}
+.DistrictT {
+  width: calc(88% - 10px);
+  height: 100%;
+  line-height: 28px;
+  padding-left: 10px;
+  word-break: break-all;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #000;
+  font-size: 14px;
+  float: left;
+}
+.DistrictI {
+  width: calc(12%);
+  height: 100%;
+  float: right;
+  line-height: 34px;
 }

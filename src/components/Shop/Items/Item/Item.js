@@ -4,7 +4,7 @@ import module from './Item.module.css';
 import Incr from '../../Incr/Incr';
 import Button from '../../../UI/Button/Button';
 import DetailedItem from '../DetailedItem/DetailedItem';
-import { getRSelect, updateObject, generateOptions } from '../../../../shared/utility';
+import { getRSelect, updateObject, generateOptions, awsS3BucketUrl } from '../../../../shared/utility';
 
 class Item extends Component {
   state = {
@@ -67,6 +67,10 @@ class Item extends Component {
     }
   }
   render() {
+    let src = null;
+    if(this.props.item.photo) {
+      src = awsS3BucketUrl + this.props.item.photo.name;
+    }
     let detailedItem = null;
     if(this.state.show) {
       detailedItem = (
@@ -82,6 +86,7 @@ class Item extends Component {
           mValue={this.state.mValue}
           price={this.state.price}
           onSelectHandler={this.onSelectHandler}
+          src={src}
         />
       );
     }
@@ -145,7 +150,7 @@ class Item extends Component {
           <div className={module.Top} >
             <div className={module.Photo} >
               {/* eslint-disable-next-line */}
-              <img src={this.props.item.src ? this.props.item.src : 'https://cdn.fstoppers.com/styles/full/s3/media/2015/12/07/white_background_bag_after.jpg'} className={module.Img} />
+              <img src={src} className={module.Img} />
             </div>
             <div className={module.Info} >
               <div className={module.Name} >

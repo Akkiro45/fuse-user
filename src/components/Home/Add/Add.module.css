@@ -28,8 +28,10 @@
   .Add {
     width: 95%;
   }
-  .Msg1 {
+  .Msg1,
+  .Msg2 {
     font-size: 16px;
+    margin: 10px 0;
   }
   .Msg2 {
     font-size: 14px;

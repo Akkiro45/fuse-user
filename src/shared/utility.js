@@ -142,13 +142,13 @@ export const convertAddress = (address) => {
   return `${address.streetAdd}, ${address.landmark}, ${address.city}-${address.pincode}, ${address.state}`;
 }
 
-export const validateFilters = (delivery, address, category, shopName) => {
+export const validateFilters = (delivery, district, category, shopName) => {
   let finalData = {};
   finalData.delivery = delivery;
-  if(address.value !== 'address') {
-    finalData.address = address.value;
+  if(district !== 'District') {
+    finalData.district = district;
   }
-  if(category.value !== 'Category') {
+  if(category.value !== 'Category*') {
     finalData.shopCategories = category.value;
   }
   if(!checkwhiteSpaces(shopName.value)) {
@@ -249,3 +249,6 @@ export const getDistrictsOptions = (state) => {
     return districts[state];
   }
 }
+
+// export const awsS3BucketUrl = 'https://s3.ap-south-1.amazonaws.com/fuse-photos/'; 
+export const awsS3BucketUrl = '';

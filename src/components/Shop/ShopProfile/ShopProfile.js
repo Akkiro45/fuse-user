@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import module from './ShopProfile.module.css';
 import Aux from '../../../hoc/Auxx/Auxx';
-import { convertAddress } from '../../../shared/utility';
+import { convertAddress, awsS3BucketUrl } from '../../../shared/utility';
 import UpIcon from '../../UI/Icons/UpArrow/UpArrow';
 import DownIcon from '../../UI/Icons/DownArrow/DownArrow';
 import Label from '../Label/Label';
@@ -29,6 +29,10 @@ class ShopProfile extends Component {
     });
   }
   render() {
+    let src = ShopPhoto;
+    if(this.props.shop.shopPhotos.length > 0) {
+      src = awsS3BucketUrl + this.props.shop.shopPhotos[0].name;
+    }
     let socialLinks = null;
     socialLinks = this.props.shop.socialLinks.map((l, i) => {
       return (
@@ -102,8 +106,7 @@ class ShopProfile extends Component {
           <div className={module.SInfo} >
             <div className={module.Photo} >
               {/* eslint-disable-next-line */}
-              <img src={this.props.src ? this.props.src : ShopPhoto}  />
-              {/* <img src={this.props.src ? this.props.src : 'https://as2.ftcdn.net/jpg/01/24/00/49/500_F_124004924_EjrA0S1BFvp3ScWCFMzRcgTnDuX3dGZh.jpg'}  /> */}
+              <img src={src}  />
             </div>
             <div className={module.Address} >
               <div className={module.Add} >

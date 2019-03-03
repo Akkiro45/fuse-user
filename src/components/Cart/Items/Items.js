@@ -24,7 +24,7 @@ const items = (props) => {
         rmvItem={props.bucket ? () => props.rmvItem(is._id, is.mValue) : null}
         onInc={props.bucket ? () => props.updateItem(is._id, true, is.mValue) : null}
         onDec={props.bucket ? () => props.updateItem(is._id, false, is.mValue) : null}
-        // src={}
+        src={is.photo.name}
       />
     );
   });

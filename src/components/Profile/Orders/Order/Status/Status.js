@@ -14,10 +14,12 @@ const Status = (props) => {
   let deliveryFromTimeStamp = null;
   let deliveryToTimeStamp = null;
   let rejectedTimeStamp = null;
+  let deliveredTimeStamp = null;
   let delivered = null;
   let accepted = null;
   let cancelled = null;
   let rejected = null;
+  let notdelivered = null;
   props.status.forEach(s => {
     if(s.type === 3) {
       cancelled = true;
@@ -35,18 +37,33 @@ const Status = (props) => {
     }
     else if(s.type === 6) {
       delivered = true;
+      deliveredTimeStamp = parseInt(s.timeStamp);
+    }
+    else if(s.type === 7) {
+      notdelivered = true;
+      rejectedTimeStamp = parseInt(s.timeStamp);     
     }
   });
+  let trackkerD = null;
+  if(delivered) {
+    trackkerD = true;
+  } 
+  if(notdelivered) {
+    trackkerD = false;
+  }
   if(cancelled) {
-    delivered = false;
+    // delivered = false;
+    trackkerD = false;
   }
   if(cancelled && !accepted) {
     accepted = false;
-    delivered = false;
+    // delivered = false;
+    trackkerD = false;
   }
   if(rejected) {
     accepted = false;
-    delivered = false;
+    // delivered = false;
+    trackkerD = false;
   }
   let errorMsg = null;
   if(props.error && props.orderID === props.currID) {
@@ -88,6 +105,7 @@ const Status = (props) => {
   let canceledTime = null;
   let rejectedTime = null;
   let deliveryTime = null;
+  let deliveredTime = null;
   if(accepted) {
     acceptedTime = (
       <TimeLabel 
@@ -117,19 +135,36 @@ const Status = (props) => {
       />
     );
   }
+  if(delivered) {
+    deliveredTime = (
+      <TimeLabel 
+        timeStamp={deliveredTimeStamp}
+        label='Delivered At'
+      />
+    );
+  }
+  if(notdelivered) {
+    rejectedTime = (
+      <TimeLabel 
+        timeStamp={rejectedTimeStamp}
+        label='Rejected At'
+      />
+    );
+  }
   let ren = (
     <Aux>
       {errorMsg}
       {cancelMsg}
       <Trackker 
         accepted={accepted}
-        delivered={delivered}
+        delivered={trackkerD}
       />
       {cancel}
       {deliveryTime}
       {acceptedTime}
       {canceledTime}
       {rejectedTime}
+      {deliveredTime}
     </Aux>
   );
   if(props.loading && props.orderID === props.currID) {
