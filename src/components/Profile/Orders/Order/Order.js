@@ -12,7 +12,6 @@ import VerifiedIcon from '../.././../UI/Icons/Verified/Verified';
 import { convertAddress } from '../../../../shared/utility';
 import TimeHeader from './TimeHeader/TimeHeader';
 import Status from './Status/Status';
-// import item from '../../../Shop/Category/Item/Item';
 
 class Order extends Component {
   state = {

@@ -250,5 +250,5 @@ export const getDistrictsOptions = (state) => {
   }
 }
 
-// export const awsS3BucketUrl = 'https://s3.ap-south-1.amazonaws.com/fuse-photos/'; 
-export const awsS3BucketUrl = '';
+export const awsS3BucketUrl = 'https://s3.ap-south-1.amazonaws.com/fuse-photos/'; 
+// export const awsS3BucketUrl = '';

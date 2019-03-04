@@ -52,21 +52,18 @@ const Status = (props) => {
     trackkerD = false;
   }
   if(cancelled) {
-    // delivered = false;
     trackkerD = false;
   }
   if(cancelled && !accepted) {
     accepted = false;
-    // delivered = false;
     trackkerD = false;
   }
   if(rejected) {
     accepted = false;
-    // delivered = false;
     trackkerD = false;
   }
   let errorMsg = null;
-  if(props.error && props.orderID === props.currID) {
+  if(props.error && props.orderID === props.currID && !notdelivered) {
     errorMsg = (
       <div className={module.CancelMsg} >
         Unable to Cancel Order!
@@ -88,7 +85,7 @@ const Status = (props) => {
     }
   }
   let cancel = null;
-  if(!cancelled && !rejected && !delivered && flag) {
+  if(!cancelled && !rejected && !delivered && flag && !notdelivered) {
     cancel = (
       <div className={module.Cancel} >
         <div className={module.CIcon} >

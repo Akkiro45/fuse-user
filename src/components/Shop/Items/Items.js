@@ -11,10 +11,10 @@ const items = (props) => {
     is = props.items.filter(i => i.category === props.category);
   }
   is = is.sort(compareItem);
-  allItems = is.map((itm, i) => {
+  allItems = is.map((itm) => {
     return (
       <Item 
-        key={i}
+        key={itm._id}
         item={itm}
         isStatic={props.isStatic}
         onAddItem={props.onAddItem}
