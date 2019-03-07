@@ -71,6 +71,7 @@ class Filters extends Component {
     });
   }
   render() {
+    const tacUrl = `${window.location.origin}/auth/tandc`;
     let ren = null;
     if(this.state.showD) {
       ren = (
@@ -115,6 +116,15 @@ class Filters extends Component {
           </div>
           <div className={module.Container} >
             <div className={module.CButton} onClick={this.onClear} >Clear</div>
+          </div>
+          <div className={module.Bottom} >
+            <div className={module.Email} >
+              contact&#64;thefuse.in
+            </div>
+            {/* eslint-disable-next-line */}
+            <a href={tacUrl} target='_blank' className={module.TAC} >
+              Terms and Conditions
+            </a>
           </div>
         </Aux>
       );

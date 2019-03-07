@@ -58,3 +58,22 @@
   float: right;
   line-height: 34px;
 }
+.Bottom {
+  position: relative;
+  left: 0;
+  bottom: -5%;
+  width: 100%;
+  text-align: center;
+}
+.Email {
+  color: #444;
+  font-size: 14px;
+  font-weight: bold;
+}
+.TAC {
+  color: #2874ff;
+  font-size: 14px;
+}
+.TAC:hover {
+  color: #b0ccff;
+}
