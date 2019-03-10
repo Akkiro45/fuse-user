@@ -9,7 +9,7 @@ const add = () => {
         Make your shop online with Fuse for FREE!
       </div>
       <div className={module.Msg2} >
-        Visit <a target='_' href={'http://shop.thefuse.in/'} >https://shop.thefuse.in</a> for more Infomation.
+        Visit <a target='_' href={'https://www.shop.thefuse.in/'} >https://www.shop.thefuse.in</a> for more Infomation.
       </div>
     </div>
   );

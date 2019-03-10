@@ -4,7 +4,7 @@ let baseURLDev = 'http://localhost:4000/fuse';
 // eslint-disable-next-line
 let baseURLProduction = 'https://quiet-wildwood-54834.herokuapp.com/fuse'
 // eslint-disable-next-line
-let server = 'http://fuse45.thefuse.in/fuse';
+let server = 'https://fuse45.thefuse.in/fuse';
 
 const instance = axios.create({
   baseURL: server 
