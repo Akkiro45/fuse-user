@@ -138,10 +138,6 @@ export const checkwhiteSpaces = (str) => {
 }
 
 
-export const convertAddress = (address) => {
-  return `${address.streetAdd}, ${address.landmark}, ${address.city}-${address.pincode}, ${address.state}`;
-}
-
 export const validateFilters = (delivery, district, category, shopName) => {
   let finalData = {};
   finalData.delivery = delivery;
@@ -184,6 +180,10 @@ export const filterCart = (itms, shopID) => {
 
 export const capatalize = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
+export const convertAddress = (address) => {
+  return `${capatalize(address.streetAdd)}, ${capatalize(address.landmark)}, ${address.city}-${address.pincode}, ${address.state}`;
 }
 
 export const dateTimeFormate = (timeStamp) => {
