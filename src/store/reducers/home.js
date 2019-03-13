@@ -69,9 +69,7 @@ const fetchShopSuccess = (state, action) => {
 const authLogout = (state, action) => {
   return updateObject(state, {
     shops: [],
-    loading: false,
     error: null,
-    moreLoading: false,
     done: false,
     filters: {},
     shop: null,

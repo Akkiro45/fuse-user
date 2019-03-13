@@ -1,0 +1,4 @@
+user-agent: *
+disallow: 
+Sitemap: https://thefuse.in/sitemap.xml
+
