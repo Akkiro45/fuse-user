@@ -6,7 +6,8 @@ const initialState = {
   bucket: [],
   error: null,
   loading: false,
-  added: false
+  added: false,
+  shopSrchName: null
 }
 const setActiveCategory = (state, action) => {
   return updateObject(state, { category: action.category });
@@ -23,6 +24,12 @@ const addToCartSuccess = (state, action) => {
 }
 const clearCartError = (state, action) => {
   return updateObject(state, { error: null, added: false });
+}
+
+const setShopSrchName = (state, action) => {
+  return updateObject(state, { 
+    shopSrchName: action.shopSrchName
+   });
 }
 
 const authLogout = (state, action) => {
@@ -43,6 +50,7 @@ const reducer = (state=initialState, action) => {
     case actionTypes.ADD_CART_SUCCESS: return addToCartSuccess(state, action);
     case actionTypes.CLEAR_CART_ERROR: return clearCartError(state, action);
     case actionTypes.AUTH_LOGOUT: return authLogout(state, action);
+    case actionTypes.SET_SHOP_SRCH_NAME: return setShopSrchName(state, action);
     default: return state;
   }
 }

@@ -95,8 +95,9 @@ class Signin extends Component {
     });
     form.splice(1,0,<p key="divide" className={module.Divide} >OR</p>);
     if(this.props.isAuthenticated) {
-      redirect = <Redirect to="/" />
+      redirect = <Redirect to='/' />
     }
+    
     ren = (
     <div className={module.View} >
       {redirect}
@@ -144,7 +145,8 @@ const mapStateToProps = state => {
   return {
     loading: state.auth.loading,
     error: state.auth.error,
-    isAuthenticated: state.auth.token !== null
+    isAuthenticated: state.auth.token !== null,
+    shopSrchName: state.shop.shopSrchName
   }
 }
 

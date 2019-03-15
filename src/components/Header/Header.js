@@ -17,9 +17,7 @@ const header = (props) => {
     <div className={module.Header} >
       <div className={module.Container} >
         {toogleButton}
-        <div className={module.Fuse} >
-          Fuse
-        </div>
+        <a href='/' className={module.Fuse} >Fuse</a>
         <div className={module.Nav} >
           <Nav isAuthenticated={props.isAuthenticated} />
         </div>

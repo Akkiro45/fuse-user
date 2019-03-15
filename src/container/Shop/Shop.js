@@ -41,6 +41,7 @@ class Shop extends Component {
           clearCartError={this.props.clearCartError}
           error={this.props.cartError}
           loading={this.props.cartLoading}
+          setShopSrchName={this.props.setShopSrchName}
         />
       );
     }
@@ -74,7 +75,8 @@ const mapDispatchToProps = dispatch => {
     fetchShop: (shopSrchName) => dispatch(actions.fetchShop(shopSrchName)),
     onCatClick: (category) => dispatch(actions.setActiveCat(category)),
     addToCart: (token, body) => dispatch(actions.addToCart(token, body)),
-    clearCartError: () => dispatch(actions.clearCartError())
+    clearCartError: () => dispatch(actions.clearCartError()),
+    setShopSrchName: (shopSrchName) => dispatch(actions.setShopSrchName(shopSrchName))
   }
 }
 

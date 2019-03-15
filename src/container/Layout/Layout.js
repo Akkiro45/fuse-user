@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import module from './Layout.module.css';
 import Header from '../../components/Header/Header';
@@ -41,6 +42,12 @@ class Layout extends Component {
     this.setState((prevState) => { 
         return {showSideDrawer: !prevState.showSideDrawer} 
     });
+  }
+  componentDidMount() {
+    if(this.props.shopSrchName) {
+      this.props.history.replace(this.props.shopSrchName);
+      this.props.setShopSrchName(null);
+    }
   }
   render(){
     let addAddress = null;
@@ -106,15 +113,17 @@ const mapStateToProps = state => {
     isAuthenticated: state.auth.token !== null,
     hError: state.home.error,
     hLoading: state.home.loading,
-    address: state.auth.address
+    address: state.auth.address,
+    shopSrchName: state.shop.shopSrchName
   }
 }
 const mapDispAtchToProps = dispatch => {
   return {
     fetchShops: (body, pageNumber, pageSize) => dispatch(actions.fetchShops(body, pageNumber, pageSize)),
     setFilters: (filters) => dispatch(actions.setFilters(filters)),
-    unsetFilters: () => dispatch(actions.unsetFilters())
+    unsetFilters: () => dispatch(actions.unsetFilters()),
+    setShopSrchName: (shopSrchName) => dispatch(actions.setShopSrchName(shopSrchName))
   }
 }
 
-export default connect(mapStateToProps, mapDispAtchToProps)(Layout);
+export default withRouter(connect(mapStateToProps, mapDispAtchToProps)(Layout));

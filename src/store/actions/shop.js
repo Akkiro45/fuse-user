@@ -31,6 +31,13 @@ export const clearCartError = () => {
   }
 }
 
+export const setShopSrchName = (shopSrchName) => {
+  return {
+    type: actionTypes.SET_SHOP_SRCH_NAME,
+    shopSrchName
+  }
+}
+
 export const addToCart = (token, body) => {
   return dispatch => {
     dispatch(addToCartStart());

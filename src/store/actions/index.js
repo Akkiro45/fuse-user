@@ -21,7 +21,8 @@ export {
 export {
   setActiveCat,
   addToCart,
-  clearCartError
+  clearCartError,
+  setShopSrchName
 } from './shop';
 
 export {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import module from './Shop.module.css';
 import ShopProfile from './ShopProfile/ShopProfile';
@@ -68,7 +69,8 @@ class Shop extends Component {
     if(this.props.isAuth) {
       this.addItemToBucket({ ...item, quantity }, item.mValue);
     } else {
-      this.setState({ error: true });
+      this.props.setShopSrchName(this.props.history.location.pathname);
+      this.props.history.replace('/auth/signin');  
     }
   }
   onClearError = () => {
@@ -132,7 +134,7 @@ class Shop extends Component {
       </div>
     );
     let items = null;
-    if(this.props.shop.itemCategories.length !== 0) {
+    if(this.props.shop.items.length !== 0) {
       cat = (
         <Category 
           categories={this.props.shop.itemCategories}
@@ -166,4 +168,4 @@ class Shop extends Component {
   }
 }
 
-export default Shop;
+export default withRouter(Shop);

@@ -20,7 +20,7 @@ const AsyncPrivacyPolicy = asyncComponent(() => {
 
 class App extends Component {
   componentDidMount() {
-		this.props.onTryAutoSignup(this.props.token);
+    this.props.onTryAutoSignup(this.props.token);
   }
   render() {
     let routes = (
@@ -63,7 +63,8 @@ const mapStateToProps = state => {
   return {
     isAuthenticated: state.auth.token !== null,
     loading: state.auth.loading,
-    token: state.auth.token
+    token: state.auth.token,
+    shopSrchName: state.shop.shopSrchName
   }
 }
 
