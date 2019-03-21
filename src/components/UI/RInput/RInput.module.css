@@ -1,10 +1,12 @@
 .Input {
   height: 100%;
-  width: calc(100% - 13px);
+  /* width: calc(100% - 13px); */
+  width: calc(100% - 10px);
   padding: 0 5px;
   border: 1px solid #b0ccff;
   outline: none;
 }
-.Input:hover {
+.Input:hover,
+.Input:focus {
   border: 1px solid #2874ff;
 }

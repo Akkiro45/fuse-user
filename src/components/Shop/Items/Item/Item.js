@@ -5,6 +5,7 @@ import Incr from '../../Incr/Incr';
 import Button from '../../../UI/Button/Button';
 import DetailedItem from '../DetailedItem/DetailedItem';
 import { getRSelect, updateObject, generateOptions, awsS3BucketUrl } from '../../../../shared/utility';
+import OSIcon from '../../../UI/Icons/OS/OS';
 
 class Item extends Component {
   state = {
@@ -111,6 +112,15 @@ class Item extends Component {
           </div>
         </div>
       );
+      if(this.props.item.outOfStock) {
+        controlls = (
+          <div className={module.Controlls} >
+            <div className={module.OS} >
+              Out of Stock
+            </div>
+          </div>
+        );
+      }
     }
     let mValues = null;
     if(this.props.item.mpValues.length === 1) {
@@ -143,33 +153,41 @@ class Item extends Component {
         </div>
       );
     }
+    let osi = null;
+    if(this.props.item.outOfStock) {
+      osi = (
+        <div className={module.OSI} >
+          <OSIcon />
+        </div>
+      );
+    }
     return (
       <div className={module.Item} >
         {detailedItem}
-        <div className={module.Container} >
-          <div className={module.Top} >
-            <div className={module.Photo} >
-              {/* eslint-disable-next-line */}
-              <img src={src} className={module.Img} />
-            </div>
-            <div className={module.Info} >
-              <div className={module.Name} >
-                {this.props.item.name}
+          <div className={module.Container} >
+            <div className={module.Top} >
+              <div className={module.Photo} >
+                {/* eslint-disable-next-line */}
+                <img src={src} className={module.Img} />
+                {osi}
               </div>
-              {mUnit}
-              <div className={module.Price} >
-                Rs. {this.state.price}
+              <div className={module.Info} >
+                <div className={module.Name} >
+                  {this.props.item.name}
+                </div>
+                {mUnit}
+                <div className={module.Price} >
+                  Rs. {this.state.price}
+                </div>
+              </div>
+            </div>
+            <div className={module.Btns} >
+              {controlls}
+              <div className={module.DButton} >
+                <Button bradius='4px' onClick={this.onDetail} >More Details</Button>
               </div>
             </div>
           </div>
-          <div className={module.Btns} >
-            {controlls}
-            <div className={module.DButton} >
-              <Button bradius='4px' onClick={this.onDetail} >More Details</Button>
-            </div>
-          </div>
-          
-        </div>
       </div>
     );
   }

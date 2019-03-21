@@ -7,6 +7,7 @@ import Label from '../../Label/Label';
 import Incr from '../../Incr/Incr';
 import Button from '../../../UI/Button/Button';
 import { checkwhiteSpaces, getRSelect, generateOptions } from '../../../../shared/utility';
+import OSIcon from '../../../UI/Icons/OS/OS';
 
 const detailedItem = (props) => {
   let controlls = null;
@@ -25,6 +26,15 @@ const detailedItem = (props) => {
           </div>
         </div>
       );
+      if(props.item.outOfStock) {
+        controlls = (
+          <div className={module.Controlls} >
+            <div className={module.OS} >
+              Out of Stock
+            </div>
+          </div>
+        );
+      }
     }
   let description = null; 
   if(!checkwhiteSpaces(props.item.description)) {
@@ -72,6 +82,14 @@ const detailedItem = (props) => {
   if(props.isStatic) {
     className = module.Top1;
   }
+  let osi = null;
+  if(props.item.outOfStock) {
+    osi = (
+      <div className={module.OSI} >
+        <OSIcon />
+      </div>
+    );
+  }
   return (
     <Aux>
       <div 
@@ -85,6 +103,7 @@ const detailedItem = (props) => {
             <div className={module.Photo} >
               {/* eslint-disable-next-line */}
               <img src={props.src} className={module.Img} />
+              {osi}
             </div>
             <div className={module.Info} >
               <div className={module.CInfo} >
