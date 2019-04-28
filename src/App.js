@@ -10,6 +10,7 @@ import Signup from './container/Auth/Signup/Signup';
 import Signin from './container/Auth/Signin/Signin';
 import Logout from './container/Auth/Logout/Logout';
 import AsyncLayout from './container/Layout/Layout';
+import { PageView, initGA } from './components/Tracking/Tracking.js';
 
 const AsyncTAC = asyncComponent(() => {
   return import('./components/TAC/TAC');
@@ -21,6 +22,8 @@ const AsyncPrivacyPolicy = asyncComponent(() => {
 class App extends Component {
   componentDidMount() {
     this.props.onTryAutoSignup(this.props.token);
+    initGA();
+    PageView();
   }
   render() {
     let routes = (
