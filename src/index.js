@@ -12,6 +12,8 @@ import authReducers from './store/reducers/auth';
 import homeReducers from './store/reducers/home';
 import shopReducers from './store/reducers/shop';
 import ordersReducers from './store/reducers/orders';
+import loadingReducers from './store/reducers/loading';
+import resetpassReducer from './store/reducers/resetpass';
 
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 
@@ -19,7 +21,9 @@ const rootReducer = combineReducers({
     auth: authReducers,
     home: homeReducers,
     shop: shopReducers,
-    orders: ordersReducers
+    orders: ordersReducers,
+    loading: loadingReducers,
+    resetpass: resetpassReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));

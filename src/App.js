@@ -9,6 +9,8 @@ import SpinnerPage from './components/UI/SpinnerPage/SpinnerPage';
 import Signup from './container/Auth/Signup/Signup';
 import Signin from './container/Auth/Signin/Signin';
 import Logout from './container/Auth/Logout/Logout';
+import ResetPass from './components/ResetPass/ResetPass';
+import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import AsyncLayout from './container/Layout/Layout';
 import { PageView, initGA } from './components/Tracking/Tracking.js';
 
@@ -28,6 +30,8 @@ class App extends Component {
   render() {
     let routes = (
       <Switch>
+        <Route path="/forgot/password" component={ForgotPassword} />
+        <Route path="/reset/password" component={ResetPass} />
         <Route path="/auth/signup" component={Signup} />
         <Route path="/auth/signin" component={Signin} />
         <Route path="/auth/tandc/privacy-policy" component={AsyncPrivacyPolicy} />

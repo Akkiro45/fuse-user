@@ -49,3 +49,9 @@ export const ADDRESS_OP_START = 'ADDRESS_OP_START';
 export const ADDRESS_OP_FAIL = 'ADDRESS_OP_FAIL';
 export const ADDRESS_OP_SUCCESS = 'ADDRESS_OP_SUCCESS';
 export const ADDRESS_OP_CLEAR_ERROR = 'ADDRESS_OP_CLEAR_ERROR';
+
+export const START_LOADING = 'START_LOADING';
+export const STOP_LOADING = 'STOP_LOADING';
+
+export const SET = 'SET';
+export const SET_TOKEN = 'SET_TOKEN'

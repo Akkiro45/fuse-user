@@ -35,3 +35,15 @@ export {
   orderConfirmed,
   cancelOrder
 } from './orders';
+
+export {
+  startLoading,
+  stopLoading
+} from './loading';
+
+export {
+  set,
+  sendMail,
+  validateToken,
+  resetPassword
+} from './resetpass';

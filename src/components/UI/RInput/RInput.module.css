@@ -5,6 +5,7 @@
   padding: 0 5px;
   border: 1px solid #b0ccff;
   outline: none;
+  background-color: #fff;
 }
 .Input:hover,
 .Input:focus {

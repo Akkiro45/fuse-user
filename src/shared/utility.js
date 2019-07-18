@@ -32,7 +32,7 @@ export const validateForm = (data, isSignup) => {
       }
     }
     if(!(data.password.length >= 8)) {
-      return { valid: false, msg: 'Password must ne larger than 7 character' };
+      return { valid: false, msg: 'Password must be larger than 7 character' };
     }
   } else {
     return { valid: false, msg: 'Please fill required fields' };
@@ -57,7 +57,7 @@ export const validateForm = (data, isSignup) => {
   return { valid: true };
 }
 
-const validateEmail = (email) => {
+export const validateEmail = (email) => {
   // eslint-disable-next-line
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
