@@ -29,12 +29,11 @@ export const sendMail = (email) => {
         }
       })
       .catch(error => {
-        // console.log(error.response.data.error.msg);
         dispatch(set(false, error.response.data.error.msg));
         dispatch(stopLoading());
       });
   }
-} 
+}
 
 export const setToken = (token, userID) => {
   return {
