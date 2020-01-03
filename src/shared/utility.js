@@ -261,5 +261,6 @@ export const searchItem = (items, serachValue) => {
   return itms;
 }
 
-export const awsS3BucketUrl = 'https://s3.ap-south-1.amazonaws.com/fuse-photos/'; 
+// export const awsS3BucketUrl = 'https://s3.ap-south-1.amazonaws.com/fuse-photos/'; 
+export const awsS3BucketUrl= 'http://res.cloudinary.com/fuse-official/image/upload/v1577715703/';
 // export const awsS3BucketUrl = '';
