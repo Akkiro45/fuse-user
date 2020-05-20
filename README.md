@@ -14,8 +14,8 @@ Shop listing
 
 ## Screenshots
 <p align='center' >
- ![screenshot](https://github.com/Akkiro45/assets/blob/master/fuse/screenshots/Screenshot1.png)
- ![screenshot](https://github.com/Akkiro45/assets/blob/master/fuse/screenshots/Screenshot2.png)
- ![screenshot](https://github.com/Akkiro45/assets/blob/master/fuse/screenshots/Screenshot7png.png)
- ![screenshot](https://github.com/Akkiro45/assets/blob/master/fuse/screenshots/Screenshot12.png)
+ <img src='https://github.com/Akkiro45/assets/blob/master/fuse/screenshots/Screenshot1.png' alt='screenshot' />
+ <img src='https://github.com/Akkiro45/assets/blob/master/fuse/screenshots/Screenshot2.png' alt='screenshot' />
+ <img src='https://github.com/Akkiro45/assets/blob/master/fuse/screenshots/Screenshot7png.png' alt='screenshot' />
+ <img src='https://github.com/Akkiro45/assets/blob/master/fuse/screenshots/Screenshot12.png' alt='screenshot' />
 </p>
