@@ -1,5 +1,5 @@
 # fuse-user
-Shop listing
+For the users to explore shops near by them and order.
 </br>
 [**fuse-user**](fuse-user.web.app)
 </br>
