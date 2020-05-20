@@ -1,5 +1,5 @@
 #fuse-user
-
+Shop listing
 </br>
 [**fuse-user**](fuse-user.web.app)
 </br>
@@ -13,7 +13,6 @@
   * Express
 
 ## Screenshots
-
 <p align='center' >
   ![screenshot](https://github.com/Akkiro45/assets/blob/master/fuse/screenshots/Screenshot1.png)
   ![screenshot](https://github.com/Akkiro45/assets/blob/master/fuse/screenshots/Screenshot2.png)
